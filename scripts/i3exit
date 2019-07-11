@@ -1,0 +1,38 @@
+#!/bin/sh
+
+function lock() {
+	# Date and time parameters
+	x_pos=100
+	y_pos=1040
+	datetime_color=FFFFFF80
+
+	i3lock -i ~/Pictures/wallpapers/roundabout-blues.png --force-clock \
+	    --timepos="$x_pos:$y_pos" \
+	    --timecolor="$datetime_color" \
+	    --datecolor="$datetime_color"
+}
+case "$1" in
+    lock)
+        lock # Defined in the same folder
+        ;;
+    logout)
+        i3-msg exit
+        ;;
+    suspend)
+        lock && systemctl suspend
+        ;;
+    hibernate)
+        lock && systemctl hibernate
+        ;;
+    reboot)
+        systemctl reboot
+        ;;
+    shutdown)
+        systemctl poweroff
+        ;;
+    *)
+        echo "Usage: $0 {lock|logout|suspend|hibernate|reboot|shutdown}"
+        exit 2
+esac
+
+exit 0
