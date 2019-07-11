@@ -1,0 +1,53 @@
+# get current status of git repo
+function __prompt_parse_git_dirty() {
+    git_status=$(git status 2>&1 | tee)
+    dirty=$(echo -n "${git_status}" 2> /dev/null | grep "modified:" &> /dev/null; echo "$?")
+    untracked=$(echo -n "${git_status}" 2> /dev/null | grep "Untracked files" &> /dev/null; echo "$?")
+    ahead=$(echo -n "${git_status}" 2> /dev/null | grep "Your branch is ahead of" &> /dev/null; echo "$?")
+    newfile=$(echo -n "${git_status}" 2> /dev/null | grep "new file:" &> /dev/null; echo "$?")
+    renamed=$(echo -n "${git_status}" 2> /dev/null | grep "renamed:" &> /dev/null; echo "$?")
+    deleted=$(echo -n "${git_status}" 2> /dev/null | grep "deleted:" &> /dev/null; echo "$?")
+    bits=''
+    if [ ${renamed} -eq 0 ]; then
+        bits=">${bits}"
+    fi
+    if [ ${ahead} -eq 0 ]; then
+        bits="*${bits}"
+    fi
+    if [ ${newfile} -eq 0 ]; then
+        bits="+${bits}"
+    fi
+    if [ ${untracked} -eq 0 ]; then
+        bits="?${bits}"
+    fi
+    if [ ${deleted} -eq 0 ]; then
+        bits="x${bits}"
+    fi
+    if [ ${dirty} -eq 0 ]; then
+        bits="!${bits}"
+    fi
+    if [ -z "$bits" ]; then
+        echo ""
+    else
+        echo " ${bits}"
+    fi
+}
+
+# get current branch in git repo
+function __prompt_parse_git_branch() {
+    git_branch=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+    if [ -z "${git_branch}" ]; then
+        echo ""
+    else
+        git_stat=$(__prompt_parse_git_dirty)
+        echo "[${git_branch}${git_stat}]"
+    fi
+}
+
+# Display return value only when non-zero
+function __prompt_nonzero_return() {
+    RETVAL=$?
+    [ $RETVAL -ne 0 ] && echo "[$RETVAL]"
+}
+
+PS1='[%F{green}%n%f@%F{blue}%m%f %F{cyan}%B%~%b%f]'$'\e[36m''`__prompt_parse_git_branch`'$'\e[0m\n42sh$ '

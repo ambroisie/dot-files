@@ -1,0 +1,2 @@
+# Avoid duplication
+source .profile
