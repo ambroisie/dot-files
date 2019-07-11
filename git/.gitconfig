@@ -1,0 +1,22 @@
+[core]
+	excludesfile = ~/.gitignore
+[color]
+	ui = auto
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[commit]
+	verbose = true
+[pull]
+	rebase = true
+[branch]
+	autosetubrebase = always
+[push]
+	default = simple
+[rebase]
+	autoSquash = true
+	autoStash = true
+[user]
+	email = bruno.belanyi@epita.fr
+	name = Bruno BELANYI
