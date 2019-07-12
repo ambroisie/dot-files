@@ -14,6 +14,8 @@ set expandtab
 set shiftwidth=4
 " -1 means the same as shitwidth
 set softtabstop=-1
+" Always indent by multiples of shiftwidth
+set shiftround
 " You shouldn't change the default tab width of 8 characters
 set tabstop=8
 " Makefiles should use tabs to indent
