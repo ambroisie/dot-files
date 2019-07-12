@@ -1,22 +1,30 @@
 [core]
-	excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore
 [color]
-	ui = auto
-	branch = auto
-	diff = auto
-	interactive = auto
-	status = auto
+    ui = auto
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
 [commit]
-	verbose = true
+    verbose = true
 [pull]
-	rebase = true
+    rebase = true
 [branch]
-	autosetubrebase = always
+    autosetubrebase = always
 [push]
-	default = simple
+    default = simple
 [rebase]
-	autoSquash = true
-	autoStash = true
+    autoSquash = true
+    autoStash = true
 [user]
-	email = bruno.belanyi@epita.fr
-	name = Bruno BELANYI
+    email = bruno.belanyi@epita.fr
+    name = Bruno BELANYI
+
+[alias]
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    trim = reflog expire --expire-unreachable=now --all
+    chop = gc --prune=now
+    optimize = repack -a -d -f --depth=250 --window=250
+    pf = pull --ff-only
