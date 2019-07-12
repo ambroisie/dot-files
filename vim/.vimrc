@@ -144,6 +144,10 @@ nnoremap Y y$
 nnoremap <Space> <nop>
 let mapleader=" "
 
+" Mappings for working with this file.
+map <Leader>ev :edit $MYVIMRC<CR>
+map <Leader>es :source $MYVIMRC<CR>
+
 " Run make silently, then skip the 'Press ENTER to continue'
 noremap <leader>m :silent! :make! \| :redraw!<cr>
 
