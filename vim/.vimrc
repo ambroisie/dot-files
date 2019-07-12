@@ -175,14 +175,6 @@ let g:gruvbox_contrast_dark = '(hard)'
 let g:gruvbox_italic=1
 colorscheme gruvbox
 
-" Remap '[' and ']' for vim-unimpaired
-nmap < [
-nmap > ]
-omap < [
-omap > ]
-xmap < [
-xmap > ]
-
 " FIXME: missing UltiSnips configuration
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
