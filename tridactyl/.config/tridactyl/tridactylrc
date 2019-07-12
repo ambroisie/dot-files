@@ -7,6 +7,9 @@ sanitise tridactyllocal tridactylsync
 set csp clobber
 fixamo_quiet
 
+" Use the dark color scheme
+colorscheme dark
+
 "
 " Binds
 "
