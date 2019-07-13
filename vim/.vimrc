@@ -199,8 +199,8 @@ nmap <Leader>fn <Plug>(qf_qf_next)
 nmap <Leader>fp <Plug>(qf_qf_previous)
 nmap <Leader>ln <Plug>(qf_loc_next)
 nmap <Leader>lp <Plug>(qf_loc_previous)
-nmap <Leader>qf <Plug>(qf_qf_toggle)
-nmap <Leader>ql <Plug>(qf_qf_toggle)
+nmap <Leader>tf <Plug>(qf_qf_toggle)
+nmap <Leader>tl <Plug>(qf_loc_toggle)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Status line
