@@ -184,6 +184,11 @@ colorscheme gruvbox
 " FIXME: missing UltiSnips configuration
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Status line
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set statusline+=%{gutentags#statusline()}
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Import settings when inside a git repository
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let git_settings = system("git config --get vim.settings")
