@@ -8,10 +8,15 @@ stow -t ~ git
 stow -t ~ i3
 stow -t ~ i3blocks
 stow -t ~ ranger
+stow -t ~ redshift
 stow -t ~ termite
 stow -t ~ tridactyl
 stow -t ~ vim
 stow -t ~ zsh
+
+# Our Redshift services needs to be symlined
+systemctl --user enable redshift
+systemctl --user enable redshift-gtk
 
 if ! [ -e ~/scripts ]; then
     # Only create the symlink when the directory doesn't exist

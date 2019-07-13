@@ -217,6 +217,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 # Auto start system tray applets
 exec --no-startup-id blueman-applet
 exec --no-startup-id nm-applet
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
+exec --no-startup-id redshift-gtk
 
 # Set the wallpaper
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/starry-night-tree.png
