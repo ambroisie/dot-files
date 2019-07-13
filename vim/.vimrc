@@ -82,6 +82,8 @@ Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 " Tag management
 Plug 'ludovicchabant/vim-gutentags'
+" Handling multiple cscopes for gutentags
+Plug 'skywind3000/gutentags_plus'
 
 " Vim facilities enhancement
 """"""""""""""""""""""""""""
@@ -135,23 +137,6 @@ set visualbell
 set t_vb=
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Yank until the end of line with Y, to be more consistent with D and C
-nnoremap Y y$
-
-" Map leader to space (needs the noremap trick)
-nnoremap <Space> <nop>
-let mapleader=" "
-
-" Mappings for working with this file.
-map <Leader>ev :edit $MYVIMRC<CR>
-map <Leader>es :source $MYVIMRC<CR>
-
-" Run make silently, then skip the 'Press ENTER to continue'
-noremap <leader>m :silent! :make! \| :redraw!<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search parameters
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ignore case on search
@@ -169,9 +154,18 @@ let g:strip_whitespace_on_save=1
 
 " Enable gutentags
 let g:gutentags_enabled=1
+" enable gtags module
+let g:gutentags_modules = ['ctags', 'gtags_cscope']
+" config project root markers.
+let g:gutentags_project_root = ['.root']
+" generate datebases in my cache directory, prevent gtags files polluting my project
+let g:gutentags_cache_dir = expand('~/.cache/tags')
+" forbid gutentags adding gtags databases
+let g:gutentags_auto_add_gtags_cscope = 0
 
 " Use a slightly darker background color to differentiate with the status line
 let g:jellybeans_background_color_256='232'
+" colorscheme jellybeans
 " colorscheme jellybeans
 
 " Set dark mode by default
