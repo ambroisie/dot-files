@@ -84,6 +84,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'ludovicchabant/vim-gutentags'
 " Handling multiple cscopes for gutentags
 Plug 'skywind3000/gutentags_plus'
+" Fuzzy file finder (installs zfz system-wide)
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Pre-written functions for fzf mappings
+Plug 'junegunn/fzf.vim'
 
 " Vim facilities enhancement
 """"""""""""""""""""""""""""
@@ -103,6 +107,8 @@ Plug 'tpope/vim-repeat'
 " Some ex command mappings
 Plug 'tpope/vim-unimpaired'
 
+" Snippets
+""""""""""
 " Snippet manager
 Plug 'SirVer/ultisnips'
 " Snippet files for Ulti Snips
@@ -195,12 +201,30 @@ map <Leader>es :source $MYVIMRC<CR>
 noremap <Leader>m :silent! :make! \| :redraw!<CR>
 
 " Mapping for quickfix bindings
+" Next and previous in quick-fix list
 nmap <Leader>fn <Plug>(qf_qf_next)
 nmap <Leader>fp <Plug>(qf_qf_previous)
+" Next and previous in location list
 nmap <Leader>ln <Plug>(qf_loc_next)
 nmap <Leader>lp <Plug>(qf_loc_previous)
+" Toggle quick-fix and location lists
 nmap <Leader>tf <Plug>(qf_qf_toggle)
 nmap <Leader>tl <Plug>(qf_loc_toggle)
+
+" Fuzzy file finder bindings
+" Only git-tracked files, Vim needs to be in a Git repository
+nmap <Leader>fg :GFiles<CR>
+" All files
+nmap <Leader>ff :Files<CR>
+" Currently open buffers
+nmap <Leader>fb :Buffers<CR>
+" Buffer history
+nmap <Leader>fh :History<CR>
+" Tags in buffer
+nmap <Leader>ft :BTags<CR>
+" Tags in all project files
+nmap <Leader>fT :Tags<CR>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Status line
