@@ -192,6 +192,8 @@ let g:UltiSnipsEditSplit="vertical"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Miscellaneous mappings
+""""""""""""""""""""""""
 " Yank until the end of line with Y, to be more consistent with D and C
 nnoremap Y y$
 
@@ -207,6 +209,7 @@ map <Leader>es :source $MYVIMRC<CR>
 noremap <Leader>m :silent! :make! \| :redraw!<CR>
 
 " Mapping for quickfix bindings
+"""""""""""""""""""""""""""""""
 " Next and previous in quick-fix list
 nmap <Leader>fn <Plug>(qf_qf_next)
 nmap <Leader>fp <Plug>(qf_qf_previous)
@@ -218,6 +221,7 @@ nmap <Leader>tf <Plug>(qf_qf_toggle)
 nmap <Leader>tl <Plug>(qf_loc_toggle)
 
 " Fuzzy file finder bindings
+""""""""""""""""""""""""""""
 " Only git-tracked files, Vim needs to be in a Git repository
 nmap <Leader>fg :GFiles<CR>
 " All files
@@ -231,9 +235,26 @@ nmap <Leader>ft :BTags<CR>
 " Tags in all project files
 nmap <Leader>fT :Tags<CR>
 
+" Git and diff mappings
+"""""""""""""""""""""""
+" Visual bindings for merging diffs as in normal mode
+xnoremap dp :diffput<cr>
+xnoremap do :diffget<cr>
+" Git add current file
+nnoremap <Leader>ga :Git add %:p<CR><CR>
+" Open status window
+nnoremap <Leader>gs :Gstatus<CR>
+" Open diff view of current buffer: the right/down window is the new version
+nnoremap <Leader>gd :Gdiffsplit!<CR>
+" Use git-mv and rename the buffer, backspace and add '!' to use the '-f' flag
+nnoremap <Leader>gm :Gmove<Space>
+" Open a buffer to the left with blame information
+nnoremap <Leader>gb :Gblame<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Status line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Show ctags and cscopes generation in status line
 set statusline+=%{gutentags#statusline()}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -241,5 +262,5 @@ set statusline+=%{gutentags#statusline()}
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let git_settings = system("git config --get vim.settings")
 if strlen(git_settings)
-	exe "set" git_settings
+    exe "set" git_settings
 endif
