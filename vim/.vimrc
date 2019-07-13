@@ -181,7 +181,13 @@ let g:gruvbox_contrast_dark = '(hard)'
 let g:gruvbox_italic=1
 colorscheme gruvbox
 
-" FIXME: missing UltiSnips configuration
+" Insert mode trigger for expansion
+let g:UltiSnipsExpandTrigger="<Tab>"
+" Jump forward and backwards in place-holder list with Ctrl-f and Ctrl-b
+let g:UltiSnipsJumpBackwardTrigger="<C-f>"
+let g:UltiSnipsJumpForwardTrigger="<C-b>"
+" Split the windowd vertically when callin :UltiSnipsEdits
+let g:UltiSnipsEditSplit="vertical"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
@@ -224,7 +230,6 @@ nmap <Leader>fh :History<CR>
 nmap <Leader>ft :BTags<CR>
 " Tags in all project files
 nmap <Leader>fT :Tags<CR>
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Status line
