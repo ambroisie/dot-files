@@ -4,6 +4,8 @@ PATH="$HOME/scripts:$PATH"
 # Export our favorite editor
 export EDITOR=vim
 export VISUAL=$EDITOR # Also use it when asking for a GUI
+# Export our terminal for i3-sensible-terminal
+export TERMINAL=termite
 
 # Color ls output depending on filetype with dircolors
 [ -e "/etc/DIR_COLORS" ] && DIR_COLORS="/etc/DIR_COLORS"

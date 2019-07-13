@@ -8,6 +8,7 @@ stow -t ~ git
 stow -t ~ i3
 stow -t ~ i3blocks
 stow -t ~ ranger
+stow -t ~ termite
 stow -t ~ tridactyl
 stow -t ~ vim
 stow -t ~ zsh

@@ -92,3 +92,9 @@ cat /etc/issue
 
 # import my prompt
 source ~/.zsh_prompt
+
+# Export our directory to Termite for opening new terminals
+if [[ $TERM == xterm-termite ]]; then
+  . /etc/profile.d/vte.sh
+  __vte_osc7
+fi
