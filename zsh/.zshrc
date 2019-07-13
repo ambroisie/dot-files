@@ -48,6 +48,10 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
 # Use arrow keys in completion list
 zstyle ':completion:*' menu select
+# Group results by category
+zstyle ':completion:*' group-name ''
+# Keep directories and files separated
+zstyle ':completion:*' list-dirs-first true
 ## add colors to processes for kill completion
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 
