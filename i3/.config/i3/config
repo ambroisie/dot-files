@@ -219,6 +219,8 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id redshift-gtk
+# Notify when battery is at 15% and 5% percent
+exec --no-startup-id i3-battery-popup -n -L 15 -l 5
 
 # Set the wallpaper
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/starry-night-tree.png
