@@ -244,12 +244,20 @@ xnoremap do :diffget<cr>
 nnoremap <Leader>ga :Git add %:p<CR><CR>
 " Open status window
 nnoremap <Leader>gs :Gstatus<CR>
-" Open diff view of current buffer: the right/down window is the new version
+" Open diff view of current buffer: the up/left window is the current index
 nnoremap <Leader>gd :Gdiffsplit!<CR>
 " Use git-mv and rename the buffer, backspace and add '!' to use the '-f' flag
 nnoremap <Leader>gm :Gmove<Space>
 " Open a buffer to the left with blame information
 nnoremap <Leader>gb :Gblame<CR>
+" Commit staged changes, open a new tab just for it
+nnoremap <Leader>gc :Gcommit -v -q<CR>
+" Invoke git-push with arguments, populate quick-fix list
+nnoremap <Leader>gp :Gpush<Space>
+" Invoke git-pull with arguments, populate quick-fix list
+nnoremap <Leader>gl :Gpull<Space>
+" Invoke git-merge with arguments, populate quick-fix list
+nnoremap <Leader>gl :Gmerge<Space>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Status line
