@@ -184,6 +184,30 @@ colorscheme gruvbox
 " FIXME: missing UltiSnips configuration
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Yank until the end of line with Y, to be more consistent with D and C
+nnoremap Y y$
+
+" Map leader to space (needs the noremap trick)
+nnoremap <Space> <Nop>
+let mapleader=" "
+
+" Mappings for working with this file.
+map <Leader>ev :edit $MYVIMRC<CR>
+map <Leader>es :source $MYVIMRC<CR>
+
+" Run make silently, then skip the 'Press ENTER to continue'
+noremap <Leader>m :silent! :make! \| :redraw!<CR>
+
+" Mapping for quickfix bindings
+nmap <Leader>fn <Plug>(qf_qf_next)
+nmap <Leader>fp <Plug>(qf_qf_previous)
+nmap <Leader>ln <Plug>(qf_loc_next)
+nmap <Leader>lp <Plug>(qf_loc_previous)
+nmap <Leader>qf <Plug>(qf_qf_toggle)
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Status line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set statusline+=%{gutentags#statusline()}
