@@ -44,8 +44,10 @@ bindkey '^[[Z' reverse-menu-complete
 
 # Style the completion a bit
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# Show a prompt on selection
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
-
+# Use arrow keys in completion list
+zstyle ':completion:*' menu select
 ## add colors to processes for kill completion
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 
