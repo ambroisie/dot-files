@@ -6,7 +6,8 @@
 " Don't try to be compatible with Vi
 set nocompatible
 " Use UTF-8
-set encoding=utf-8 fileencodings=utf-8
+set encoding=utf-8
+set fileencodings=utf-8
 
 " Use space by default
 set expandtab
@@ -153,22 +154,28 @@ set smartcase
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin parameters
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" BetterWhitespace settings
+"""""""""""""""""""""""""""
 " Enable trailing whitespace high-lighting
 let g:better_whitespace_enabled=1
 " Strip trailing whitespace on file-save
 let g:strip_whitespace_on_save=1
 
+" GutenTags settings
+""""""""""""""""""""
 " Enable gutentags
 let g:gutentags_enabled=1
 " enable gtags module
-let g:gutentags_modules = ['ctags', 'gtags_cscope']
+let g:gutentags_modules=['ctags', 'gtags_cscope']
 " config project root markers.
-let g:gutentags_project_root = ['.root', 'Makefile']
+let g:gutentags_project_root=['.root', 'Makefile']
 " generate datebases in my cache directory, prevent gtags files polluting my project
-let g:gutentags_cache_dir = expand('~/.cache/tags')
+let g:gutentags_cache_dir=expand('~/.cache/tags')
 " forbid gutentags adding gtags databases
-let g:gutentags_auto_add_gtags_cscope = 0
+let g:gutentags_auto_add_gtags_cscope=0
 
+" Theme settings
+""""""""""""""""
 " Use a slightly darker background color to differentiate with the status line
 let g:jellybeans_background_color_256='232'
 " colorscheme jellybeans
@@ -176,11 +183,13 @@ let g:jellybeans_background_color_256='232'
 
 " Set dark mode by default
 set background=dark
-let g:gruvbox_contrast_dark = '(hard)'
+let g:gruvbox_contrast_dark='(hard)'
 " Enable italics because urxvt supports them
 let g:gruvbox_italic=1
 colorscheme gruvbox
 
+" UltiSnips settings
+""""""""""""""""""""
 " Insert mode trigger for expansion
 let g:UltiSnipsExpandTrigger="<Tab>"
 " Jump forward and backwards in place-holder list with Ctrl-f and Ctrl-b
@@ -268,7 +277,7 @@ set statusline+=%{gutentags#statusline()}
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Import settings when inside a git repository
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let git_settings = system("git config --get vim.settings")
+let git_settings=system("git config --get vim.settings")
 if strlen(git_settings)
     exe "set" git_settings
 endif
