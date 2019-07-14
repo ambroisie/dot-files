@@ -7,6 +7,9 @@ export VISUAL=$EDITOR # Also use it when asking for a GUI
 # Export our terminal for i3-sensible-terminal
 export TERMINAL=termite
 
+# Use my own ranger config file with all mappings defined
+export RANGER_LOAD_DEFAULT_RC=FALSE
+
 # Color ls output depending on filetype with dircolors
 [ -e "/etc/DIR_COLORS" ] && DIR_COLORS="/etc/DIR_COLORS"
 [ -e "$HOME/.dircolors" ] && DIR_COLORS="$HOME/.dircolors"
