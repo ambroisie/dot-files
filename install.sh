@@ -3,6 +3,7 @@
 # Configuration files
 stow -t ~ X
 stow -t ~ bash
+stow -t ~ dunst
 stow -t ~ emacs
 stow -t ~ git
 stow -t ~ i3
@@ -15,8 +16,8 @@ stow -t ~ vim
 stow -t ~ zsh
 
 # Our Redshift services needs to be symlined
-systemctl --user enable redshift
-systemctl --user enable redshift-gtk
+systemctl --user enable redshift &>/dev/null
+systemctl --user enable redshift-gtk &>/dev/null
 
 if ! [ -e ~/scripts ]; then
     # Only create the symlink when the directory doesn't exist

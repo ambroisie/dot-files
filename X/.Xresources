@@ -33,4 +33,3 @@ URxvt.perl-ext-common: default,keyboard-select,resize-font
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 ! Activate backwards-search with Alt+s
 URxvt.keysym.M-s: perl:keyboard-select:search
-
