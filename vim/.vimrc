@@ -262,11 +262,11 @@ nnoremap <Leader>gb :Gblame<CR>
 " Commit staged changes, open a new tab just for it
 nnoremap <Leader>gc :Gcommit -v -q<CR>
 " Invoke git-push with arguments, populate quick-fix list
-nnoremap <Leader>gp :Gpush<Space>
+nnoremap <Leader>gpu :Gpush<Space>
 " Invoke git-pull with arguments, populate quick-fix list
-nnoremap <Leader>gl :Gpull<Space>
+nnoremap <Leader>gpl :Gpull<Space>
 " Invoke git-merge with arguments, populate quick-fix list
-nnoremap <Leader>gl :Gmerge<Space>
+nnoremap <Leader>gm :Gmerge<Space>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Status line
