@@ -215,8 +215,8 @@ bindsym XF86Tools exec toggle_touchpad
 bindsym XF86Display exec arandr
 
 # Bind sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 && notify-send -t 500 -u low "Increment brightness: $(printf '%.0f' `xbacklight -get`)%"
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 && notify-send -t 500 -u low "Decrement brightness: $(printf '%.0f' `xbacklight -get`)%"
 
 # Auto start system tray applets
 exec --no-startup-id blueman-applet
