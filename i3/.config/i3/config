@@ -209,6 +209,10 @@ bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
+# Bind keyboard settings key to toggle touchpad
+bindsym XF86Tools exec toggle_touchpad
+# Bind display control to launch arandr
+bindsym XF86Display exec arandr
 
 # Bind sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
