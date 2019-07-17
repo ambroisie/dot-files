@@ -9,6 +9,20 @@ set nocompatible
 set encoding=utf-8
 set fileencodings=utf-8
 
+" Allow unsaved buffers when switching windows
+set hidden
+
+" Allow command completion in command-line
+set wildmenu
+
+" Enable syntax high-lighting and file-type specific plugins
+syntax on
+filetype plugin indent on
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Indentation configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use space by default
 set expandtab
 " Indent and align to 4 spaces by default
@@ -21,17 +35,6 @@ set shiftround
 set tabstop=8
 " Makefiles should use tabs to indent
 autocmd Filetype make setlocal noexpandtab
-
-" Enable search high-lighting while the search is on-going
-set hlsearch
-" Color the 80th column
-set colorcolumn=80
-" Show whitespace
-set list listchars=tab:»·,trail:·
-
-" Enable syntax high-lighting
-syntax on
-filetype plugin indent on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
@@ -136,16 +139,25 @@ set number
 set laststatus=2
 " Enable Doxygen highlighting
 let g:load_doxygen_syntax=1
-
 " Make backspace behave as expected
 set backspace=eol,indent,start
-" Disable bell completely
+" Use the visual bell instead of beeping
 set visualbell
+" Disable bell completely by resetting the visual bell's escape sequence
 set t_vb=
+
+" Color the 80th column
+set colorcolumn=80
+" Show whitespace
+set list
+" Show a tab as an arrow, and spaces as dots
+set listchars=tab:»·,trail:·
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search parameters
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable search high-lighting while the search is on-going
+set hlsearch
 " Ignore case on search
 set ignorecase
 " Ignore case unless there is an uppercase letter in the pattern
