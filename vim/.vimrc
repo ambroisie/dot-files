@@ -157,6 +157,9 @@ set list
 " Show a tab as an arrow, and spaces as dots
 set listchars=tab:»·,trail:·
 
+" Timeout quickly on shortcuts, I can't wait two seconds to delete in visual
+set timeoutlen=150
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search parameters
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
