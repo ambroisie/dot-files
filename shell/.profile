@@ -29,5 +29,5 @@ export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 # Rust installation
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# Use keychain to handle only prompt for ssh keys once, when needed
-eval $(keychain --eval id_rsa --quiet --nogui --noask)
+# Use keychain to handle ssh-agent
+eval $(keychain --eval id_rsa --quiet)
