@@ -118,6 +118,10 @@ Plug 'SirVer/ultisnips'
 " Snippet files for Ulti Snips
 Plug 'honza/vim-snippets'
 
+" Rust
+""""""
+Plug 'rust-lang/rust.vim'
+
 call plug#end()
 -
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
