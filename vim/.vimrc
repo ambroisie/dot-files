@@ -1,7 +1,6 @@
 " FIXME: put all this in .vim folder and import them on a per-file basis
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Basic configuraion
+" Basic configuraion {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Don't try to be compatible with Vi
 set nocompatible
@@ -18,10 +17,9 @@ set wildmenu
 " Enable syntax high-lighting and file-type specific plugins
 syntax on
 filetype plugin indent on
+" }}}
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Indentation configuration
+" Indentation configuration {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use space by default
 set expandtab
@@ -35,9 +33,9 @@ set shiftround
 set tabstop=8
 " Makefiles should use tabs to indent
 autocmd Filetype make setlocal noexpandtab
+" }}}
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins
+" Plugins {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Install with :PlugInstall
 
@@ -56,7 +54,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-" Theming
+" Theming {{{
 """""""""
 " Nice dark theme
 Plug 'nanotech/jellybeans.vim'
@@ -66,15 +64,17 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 " Themes for airline
 Plug 'vim-airline/vim-airline-themes'
+" }}}
 
-" Minimum viable vim config
+" Minimum viable vim config {{{
 """""""""""""""""""""""""""
 " Basic default vimrc file
 Plug 'tpope/vim-sensible'
 " High-light trailing whitespace
 Plug 'ntpeters/vim-better-whitespace'
+" }}}
 
-" Program specific plug-ins
+" Program specific plug-ins {{{
 """""""""""""""""""""""""""
 " Pandoc syntax file
 Plug 'vim-pandoc/vim-pandoc-syntax'
@@ -92,8 +92,9 @@ Plug 'skywind3000/gutentags_plus'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Pre-written functions for fzf mappings
 Plug 'junegunn/fzf.vim'
+" }}}
 
-" Vim facilities enhancement
+" Vim facilities enhancement {{{
 """"""""""""""""""""""""""""
 " Relative numbers only on focused buffer
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
@@ -101,8 +102,9 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'tpope/vim-vinegar'
 " Better quick-fix window
 Plug 'romainl/vim-qf'
+" }}}
 
-" Mappings
+" Mappings {{{
 """"""""""
 " Easily delete, change and add surroundings in pairs
 Plug 'tpope/vim-surround'
@@ -110,30 +112,33 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 " Some ex command mappings
 Plug 'tpope/vim-unimpaired'
+" }}}
 
-" Snippets
+" Snippets {{{
 """"""""""
 " Snippet manager
 Plug 'SirVer/ultisnips'
 " Snippet files for Ulti Snips
 Plug 'honza/vim-snippets'
+" }}}
 
-" Rust
+" Rust {{{
 """"""
 Plug 'rust-lang/rust.vim'
+" }}}
 
 call plug#end()
--
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" File parameters
+" }}}
+
+" File parameters {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Disable backups, we have source control for that
 set nobackup
 " Disable swapfiles too
 set noswapfile
+" }}}
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" UI and UX parameters
+" UI and UX parameters {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set the minimal amount of lignes under and above the cursor for context
 set scrolloff=5
@@ -159,9 +164,9 @@ set listchars=tab:»·,trail:·
 
 " Timeout quickly on shortcuts, I can't wait two seconds to delete in visual
 set timeoutlen=150
+" }}}
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Search parameters
+" Search parameters {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable search high-lighting while the search is on-going
 set hlsearch
@@ -169,18 +174,19 @@ set hlsearch
 set ignorecase
 " Ignore case unless there is an uppercase letter in the pattern
 set smartcase
+" }}}
 
+" Plugin parameters {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugin parameters
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" BetterWhitespace settings
+" BetterWhitespace settings {{{
 """""""""""""""""""""""""""
 " Enable trailing whitespace high-lighting
 let g:better_whitespace_enabled=1
 " Strip trailing whitespace on file-save
 let g:strip_whitespace_on_save=1
+" }}}
 
-" GutenTags settings
+" GutenTags settings {{{
 """"""""""""""""""""
 " Enable gutentags
 let g:gutentags_enabled=1
@@ -192,8 +198,9 @@ let g:gutentags_project_root=['.root', 'Makefile']
 let g:gutentags_cache_dir=expand('~/.cache/tags')
 " forbid gutentags adding gtags databases
 let g:gutentags_auto_add_gtags_cscope=0
+" }}}
 
-" Theme settings
+" Theme settings {{{
 """"""""""""""""
 " Use a slightly darker background color to differentiate with the status line
 let g:jellybeans_background_color_256='232'
@@ -206,8 +213,9 @@ let g:gruvbox_contrast_dark='(hard)'
 " Enable italics because urxvt supports them
 let g:gruvbox_italic=1
 colorscheme gruvbox
+" }}}
 
-" UltiSnips settings
+" UltiSnips settings {{{
 """"""""""""""""""""
 " Insert mode trigger for expansion
 let g:UltiSnipsExpandTrigger="<Tab>"
@@ -216,11 +224,12 @@ let g:UltiSnipsJumpBackwardTrigger="<C-f>"
 let g:UltiSnipsJumpForwardTrigger="<C-b>"
 " Split the windowd vertically when callin :UltiSnipsEdits
 let g:UltiSnipsEditSplit="vertical"
+" }}}
+" }}}
 
+" Mappings {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Miscellaneous mappings
+" Miscellaneous mappings {{{
 """"""""""""""""""""""""
 " Yank until the end of line with Y, to be more consistent with D and C
 nnoremap Y y$
@@ -235,8 +244,9 @@ map <Leader>es :source $MYVIMRC<CR>
 
 " Run make silently, then skip the 'Press ENTER to continue'
 noremap <Leader>m :silent! :make! \| :redraw!<CR>
+" }}}
 
-" Mapping for quickfix bindings
+" Mapping for quickfix bindings {{{
 """""""""""""""""""""""""""""""
 " Next and previous in quick-fix list
 nmap <Leader>fn <Plug>(qf_qf_next)
@@ -247,8 +257,9 @@ nmap <Leader>lp <Plug>(qf_loc_previous)
 " Toggle quick-fix and location lists
 nmap <Leader>tf <Plug>(qf_qf_toggle)
 nmap <Leader>tl <Plug>(qf_loc_toggle)
+" }}}
 
-" Fuzzy file finder bindings
+" Fuzzy file finder bindings {{{
 """"""""""""""""""""""""""""
 " Only git-tracked files, Vim needs to be in a Git repository
 nmap <Leader>fg :GFiles<CR>
@@ -262,8 +273,9 @@ nmap <Leader>fh :History<CR>
 nmap <Leader>ft :BTags<CR>
 " Tags in all project files
 nmap <Leader>fT :Tags<CR>
+" }}}
 
-" Git and diff mappings
+" Git and diff mappings {{{
 """""""""""""""""""""""
 " Visual bindings for merging diffs as in normal mode
 xnoremap dp :diffput<cr>
@@ -288,17 +300,21 @@ nnoremap <Leader>gpu :Gpush<Space>
 nnoremap <Leader>gpl :Gpull<Space>
 " Invoke git-merge with arguments, populate quick-fix list
 nnoremap <Leader>gm :Gmerge<Space>
+" }}}
+" }}}
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Status line
+" Status line {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Show ctags and cscopes generation in status line
 set statusline+=%{gutentags#statusline()}
+" }}}
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Import settings when inside a git repository
+" Import settings when inside a git repository {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let git_settings=system("git config --get vim.settings")
 if strlen(git_settings)
     exe "set" git_settings
 endif
+" }}}
+
+" vim: foldmethod=marker
