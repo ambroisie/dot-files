@@ -24,7 +24,7 @@
 #
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
-command=/usr/lib/i3blocks/$BLOCK_NAME
+command=/usr/lib/i3blocks/$BLOCK_NAME/$BLOCK_NAME
 separator_block_width=10
 markup=none
 
@@ -37,6 +37,7 @@ markup=none
 [keyindicator]
 instance=CAPS
 interval=once
+markup=pango
 signal=11
 separator_block_width=5
 separator=false
@@ -44,6 +45,7 @@ separator=false
 #[keyindicator]
 #instance=NUM
 #interval=once
+#markup=pango
 #signal=11
 #separator_block_width=5
 #separator=false
@@ -53,7 +55,8 @@ separator=false
 # This displays "ARTIST - SONG" if a music is playing.
 # Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
 [mediaplayer]
-label=♪:
+label=♪ 
+instance=spotify
 interval=5
 signal=10
 
@@ -62,7 +65,7 @@ signal=10
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [cpu_usage]
-label=CPU
+label=CPU 
 interval=10
 
 #[load_average]
@@ -74,7 +77,7 @@ interval=10
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
 [disk]
-label=DISK
+label=DISK 
 interval=30
 
 # Network interface monitoring
@@ -89,17 +92,15 @@ separator_block_width=5
 
 [wifi]
 interval=10
+instance=wlp0s20f3
 separator=false
-
-[bandwidth]
-interval=5
 
 # Battery indicator
 #
 # The battery instance defaults to 0.
 [battery]
 label=⚡
-command=acpi
+#command=acpi
 instance=0
 interval=30
 markup=pango
@@ -122,7 +123,7 @@ interval=5
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [temperature]
-label=TEMP
+label=TEMP 
 interval=10
 
 # Volume indicator
@@ -132,7 +133,7 @@ interval=10
 # See the script for details.
 [volume]
 #label=VOL
-label=♪
+label=♪ 
 instance=Master
 interval=once
 signal=10
