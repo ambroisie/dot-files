@@ -84,10 +84,6 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'tpope/vim-git'
 " An awesome git wrapper
 Plug 'tpope/vim-fugitive'
-" Tag management
-Plug 'ludovicchabant/vim-gutentags'
-" Handling multiple cscopes for gutentags
-Plug 'skywind3000/gutentags_plus'
 " Fuzzy file finder (installs zfz system-wide)
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Pre-written functions for fzf mappings
@@ -184,20 +180,6 @@ set smartcase
 let g:better_whitespace_enabled=1
 " Strip trailing whitespace on file-save
 let g:strip_whitespace_on_save=1
-" }}}
-
-" GutenTags settings {{{
-""""""""""""""""""""
-" Enable gutentags
-let g:gutentags_enabled=1
-" enable gtags module
-let g:gutentags_modules=['ctags', 'gtags_cscope']
-" config project root markers.
-let g:gutentags_project_root=['.root', 'Makefile']
-" generate datebases in my cache directory, prevent gtags files polluting my project
-let g:gutentags_cache_dir=expand('~/.cache/tags')
-" forbid gutentags adding gtags databases
-let g:gutentags_auto_add_gtags_cscope=0
 " }}}
 
 " Theme settings {{{
@@ -301,12 +283,6 @@ nnoremap <Leader>gpl :Gpull<Space>
 " Invoke git-merge with arguments, populate quick-fix list
 nnoremap <Leader>gm :Gmerge<Space>
 " }}}
-" }}}
-
-" Status line {{{
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Show ctags and cscopes generation in status line
-set statusline+=%{gutentags#statusline()}
 " }}}
 
 " Import settings when inside a git repository {{{
