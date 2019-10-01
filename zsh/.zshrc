@@ -93,9 +93,6 @@ zstyle ':completion:*' hosts $(awk '/^[^#]/ {print $2 $3" "$4" "$5}' /etc/hosts 
 # fish-like syntax high-lighting for interactive commands
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Display the computer's name in ASCII art
-cat /etc/issue
-
 # import my prompt
 source ~/.zsh_prompt
 

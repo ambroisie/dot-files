@@ -42,9 +42,6 @@ NC="\e[m"               # Color Reset
 # new alert text
 ALERT=${BWhite}${On_Red} # Bold White on red background
 
-# Display the computer's name in ASCII art
-cat /etc/issue
-
 # FIXME: those files should be in some folders...
 # Import my aliases
 source ~/.aliases
