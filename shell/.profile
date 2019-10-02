@@ -16,8 +16,10 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 [ -e "$DIR_COLORS" ] || DIR_COLORS=""
 eval "`dircolors -b $DIR_COLORS`"
 
-# Allow for colorful man pages
-export LESS=-R
+# Use less as my default pager
+export PAGER=less
+# Allow for colorful man pages, clear the screen on exit
+export LESS='-R -+X'
 export LESS_TERMCAP_mb=$'\E[1;31m'     # begin blink
 export LESS_TERMCAP_md=$'\E[1;36m'     # begin bold
 export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
