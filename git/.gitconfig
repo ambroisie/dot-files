@@ -28,3 +28,9 @@
     chop = gc --prune=now
     optimize = repack -a -d -f --depth=250 --window=250
     pf = pull --ff-only
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
