@@ -10,6 +10,8 @@ fixamo_quiet
 " Use the dark color scheme
 colorscheme dark
 
+" Make tridactyl open Vim in Termite instead of xterm
+set editorcmd  termite --class tridactyl_editor -e 'vim %f'
 "
 " Binds
 "
