@@ -270,3 +270,6 @@ exec --no-startup-id xautolock -time 1 -cornerredelay 5 -corners +00- -locker "~
 
 # Set the wallpaper
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/starry-night-tree.png
+
+# Make tridactyl-spawned editor floating by default
+for_window [class="tridactyl_editor"] floating enable border pixel 1
