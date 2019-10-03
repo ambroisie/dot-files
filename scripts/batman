@@ -2,7 +2,6 @@
 
 export MANPAGER='sh -c "col -bx | bat --language man --style grid"'
 export MANROFFOPT='-c'
-export BAT_PAGER="$PAGER $LESS"
 
 command man "$@"
 exit $?
