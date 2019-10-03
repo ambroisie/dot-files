@@ -15,10 +15,6 @@ stow -t ~ tridactyl
 stow -t ~ vim
 stow -t ~ zsh
 
-# Our Redshift services needs to be symlined
-systemctl --user enable redshift &>/dev/null
-systemctl --user enable redshift-gtk &>/dev/null
-
 if ! [ -e ~/scripts ]; then
     # Only create the symlink when the directory doesn't exist
     mkdir ~/scripts
