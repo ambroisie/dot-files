@@ -1,15 +1,15 @@
 #!/bin/sh
 
 function lock() {
-	# Date and time parameters
-	x_pos=100
-	y_pos=1040
-	datetime_color=FFFFFF80
+    # Date and time parameters
+    x_pos=100
+    y_pos=1040
+    datetime_color=FFFFFF80
 
-	i3lock -i ~/Pictures/wallpapers/roundabout-blues.png --force-clock \
-	    --timepos="$x_pos:$y_pos" \
-	    --timecolor="$datetime_color" \
-	    --datecolor="$datetime_color"
+    i3lock -i ~/Pictures/wallpapers/roundabout-blues.png --force-clock \
+        --timepos="$x_pos:$y_pos" \
+        --timecolor="$datetime_color" \
+        --datecolor="$datetime_color"
 }
 case "$1" in
     lock)
@@ -17,6 +17,9 @@ case "$1" in
         ;;
     logout)
         i3-msg exit
+        ;;
+    switch_user)
+        dm-tool switch-to-greeter
         ;;
     suspend)
         lock && systemctl suspend
@@ -31,7 +34,7 @@ case "$1" in
         systemctl poweroff
         ;;
     *)
-        echo "Usage: $0 {lock|logout|suspend|hibernate|reboot|shutdown}"
+        echo "Usage: $0 {lock|logout|switch_user|suspend|hibernate|reboot|shutdown}"
         exit 2
 esac
 
