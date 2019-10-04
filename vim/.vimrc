@@ -159,7 +159,7 @@ set list
 set listchars=tab:»·,trail:·
 
 " Timeout quickly on shortcuts, I can't wait two seconds to delete in visual
-set timeoutlen=150
+set timeoutlen=500
 " }}}
 
 " Search parameters {{{
