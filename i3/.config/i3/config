@@ -273,3 +273,5 @@ exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/starry-night-tree.png
 
 # Make tridactyl-spawned editor floating by default
 for_window [class="tridactyl_editor"] floating enable border pixel 1
+# Make blueman windows floating by default
+for_window [class="^Blueman-.*$"] floating enable
