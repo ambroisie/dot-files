@@ -46,5 +46,12 @@ command hint_focus hint -;
 " Open right click menu on links
 bind ;C composite hint_focus; !s xdotool key Menu
 
+"
+" URL Redirects
+"
+
+" Always redirect Reddit to the old site
+autocmd DocStart ^http(s?)://www.reddit.com js tri.excmds.urlmodify("-t", "www", "old")
+
 " This will have to do until someone writes us a nice syntax file :)
 " vim: set filetype=vim:
