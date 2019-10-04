@@ -1,5 +1,5 @@
 # Add our scripts to the path
-export PATH="$HOME/scripts:$PATH"
+export PATH="$HOME/.scripts:$PATH"
 
 # Export our favorite editor
 export EDITOR=vim

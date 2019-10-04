@@ -15,12 +15,10 @@ stow -t ~ tridactyl
 stow -t ~ vim
 stow -t ~ zsh
 
-if ! [ -e ~/scripts ]; then
-    # Only create the symlink when the directory doesn't exist
-    mkdir ~/scripts
-    # Scripts must be in there own directory
-    stow -t ~/scripts scripts/
-fi
+# Only create the symlink when the directory doesn't exist
+mkdir -p ~/.scripts
+# Scripts must be in their own directory
+stow -t ~/.scripts scripts/
 
 # Common shell files
 stow -t ~ shell/
