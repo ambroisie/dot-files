@@ -288,6 +288,20 @@ let g:UltiSnipsJumpForwardTrigger="<C-b>"
 " Split the windowd vertically when callin :UltiSnipsEdits
 let g:UltiSnipsEditSplit="vertical"
 " }}}
+
+" ALE settings {{{
+""""""""""""""
+" Always display the sign column to avoid moving the buffer all the time
+let g:ale_sign_column_always=1
+" Change the way ALE display messages
+let g:ale_echo_msg_info_str='I'
+let g:ale_echo_msg_warning_str='W'
+let g:ale_echo_msg_error_str='E'
+" The message displayed in the command line area
+let g:ale_echo_msg_format='[%linter%][%severity%]%(code):% %s'
+" The message displayed in the location list
+let g:ale_loclist_msg_format='[%linter%]%(code):% %s'
+" }}}
 " }}}
 
 " Mappings {{{
