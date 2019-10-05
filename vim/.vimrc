@@ -61,9 +61,9 @@ Plug 'nanotech/jellybeans.vim'
 " Another nice dark theme
 Plug 'morhetz/gruvbox'
 " Fancy status bar
-Plug 'vim-airline/vim-airline'
-" Themes for airline
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
+" Add the gruvbox theme to my status line
+Plug 'shinchu/lightline-gruvbox.vim'
 " }}}
 
 " Minimum viable vim config {{{
@@ -195,6 +195,59 @@ let g:gruvbox_contrast_dark='(hard)'
 " Enable italics because urxvt supports them
 let g:gruvbox_italic=1
 colorscheme gruvbox
+" }}}
+
+" Lightline settings {{{
+""""""""""""""""""""
+let g:lightline={}
+" Use the gruvbox colorscheme
+let g:lightline.colorscheme='gruvbox'
+let g:lightline.active={
+  \     'left': [
+  \         [ 'mode', 'paste' ],
+  \         [ 'gitbranch', 'readonly', 'filename', 'modified' ],
+  \         [ 'spell' ],
+  \     ],
+  \     'right': [
+  \         [ 'lineinfo' ],
+  \         [ 'percent' ],
+  \         [ 'fileformat', 'fileencoding', 'filetype' ],
+  \     ]
+  \ }
+let g:lightline.inactive={
+  \     'left': [
+  \         [ 'filename' ],
+  \     ],
+  \     'right': [
+  \         [ 'lineinfo' ],
+  \         [ 'percent' ],
+  \     ],
+  \ }
+let g:lightline.component_function={
+  \     'readonly': 'LightlineReadonly',
+  \     'modified': 'LightlineModified',
+  \     'gitbranch': 'LightlineFugitive',
+  \ }
+
+" Lightline function wrappers {{{
+"""""""""""""""""""""""""""""
+" Show a lock icon when editing a read-only file when it makes sense
+function! LightlineReadonly()
+    return &ft!~?'help\|vimfiler\|netrw' && &readonly ? '' : ''
+endfunction
+" Show a '+' when the buffer is modified, '-' if not, when it makes sense
+function! LightlineModified()
+    return &ft=~'help\|vimfiler\|netrw' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+" Show branch name with nice icon in status line, when it makes sense
+function! LightlineFugitive()
+    if &ft!~?'help\|vimfiler\|netrw' && exists('*fugitive#head')
+            let branch=fugitive#head()
+            return branch!=#'' ? ' '.branch : ''
+    endif
+    return ''
+endfunction
+" }}}
 " }}}
 
 " UltiSnips settings {{{
