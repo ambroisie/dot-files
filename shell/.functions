@@ -55,3 +55,7 @@ function mcd() {
   cd "$1"
 }
 
+# Weather in your terminal, optionally take the city in argument (e.g: VPN)
+function meteo() {
+    curl "http://wttr.in/$1" # Bonus: try to see the weather on 'moon'
+}
