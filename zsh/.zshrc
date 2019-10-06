@@ -90,8 +90,8 @@ zstyle ':completion:*:ssh:*' group-order \
 zstyle ':completion:*' hosts $(awk '/^[^#]/ {print $2 $3" "$4" "$5}' /etc/hosts \
         | grep -v ip6- && grep "^#%" /etc/hosts | awk -F% '{print $2}')
 
-# fish-like syntax high-lighting for interactive commands
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# fish-like syntax high-lighting for interactive commands (installed from AUR)
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # import my prompt
 source ~/.zsh_prompt
