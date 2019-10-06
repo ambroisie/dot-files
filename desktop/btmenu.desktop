@@ -1,0 +1,6 @@
+[Desktop Entry]
+Categories=Settings;HardwareSettings;
+Name=btmenu
+GenericName=Bluetooth Menu
+Exec=btmenu
+Type=Application

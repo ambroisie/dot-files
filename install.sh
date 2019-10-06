@@ -15,7 +15,7 @@ stow -t ~ tridactyl
 stow -t ~ vim
 stow -t ~ zsh
 
-# Only create the symlink when the directory doesn't exist
+# Create the directory if needed
 mkdir -p ~/.scripts
 # Scripts must be in their own directory
 stow -t ~/.scripts scripts/
@@ -25,3 +25,8 @@ stow -t ~ shell/
 
 # Wallpapers
 stow -t ~ wallpapers/
+
+# Create the directory if needed
+mkdir -p ~/.local/share/applications
+# Symlink the '.desktop' files (btmenu needs one)
+stow -t ~/.local/share/applications desktop
