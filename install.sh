@@ -10,6 +10,7 @@ stow -t ~ i3
 stow -t ~ i3blocks
 stow -t ~ ranger
 stow -t ~ redshift
+stow -t ~ rofi
 stow -t ~ termite
 stow -t ~ tridactyl
 stow -t ~ vim
