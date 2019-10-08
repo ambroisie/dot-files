@@ -5,6 +5,7 @@ stow -t ~ X
 stow -t ~ bash
 stow -t ~ dunst
 stow -t ~ emacs
+stow -t ~ flake8
 stow -t ~ git
 stow -t ~ i3
 stow -t ~ i3blocks

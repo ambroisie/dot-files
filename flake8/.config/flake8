@@ -1,0 +1,22 @@
+[flake8]
+ignore =
+    # Whitespace before a ':' in slices
+    E203,
+    # Line over 80 columns
+    E501,
+    # Line break before a binary operator
+    W503
+
+# Up-to 88 thanks to B950 violation
+max-line-length = 80
+
+# Cyclomatic complexity for functions
+max-complexity = 18
+
+select =
+    # Built-in violations (complexity, whitespace, and others)
+    C,E,F,W,
+    # Violations from flake8-mypy
+    T4,
+    # Violations from flake8-bugbear, with opinionated warnings
+    B,B9
