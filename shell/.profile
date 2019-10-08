@@ -14,7 +14,7 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 [ -e "/etc/DIR_COLORS" ] && DIR_COLORS="/etc/DIR_COLORS"
 [ -e "$HOME/.dircolors" ] && DIR_COLORS="$HOME/.dircolors"
 [ -e "$DIR_COLORS" ] || DIR_COLORS=""
-eval "`dircolors -b $DIR_COLORS`"
+eval "$(dircolors -b $DIR_COLORS)"
 
 # Use less as my default pager
 export PAGER=less
@@ -39,4 +39,4 @@ export BAT_PAGER="$PAGER $LESS"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Use keychain to handle ssh-agent
-eval $(keychain --eval id_rsa --quiet)
+eval "$(keychain --eval id_rsa --quiet)"
