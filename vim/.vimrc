@@ -140,6 +140,8 @@ call plug#end()
 set nobackup
 " Disable swapfiles too
 set noswapfile
+" Don't show Netrw buffers
+autocmd FileType netrw setlocal bufhidden=delete
 " }}}
 
 " UI and UX parameters {{{
