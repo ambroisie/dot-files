@@ -1,6 +1,15 @@
 ! FIXME: this line should be conditional in some way
 #include ".Xresources.d/theme/easy-dark"
 
+! XTerm settings
+
+! Default monospace font
+xterm*faceName: Monsopace
+! Pretty small size, but legible
+xterm*faceSize: 9
+
+! URxvt settings
+
 ! Remove the ugly scrollbar
 URxvt.scrollBar: false
 ! Nice looking font, small but legible
