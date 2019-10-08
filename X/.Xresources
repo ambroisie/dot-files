@@ -13,7 +13,7 @@ xterm*faceSize: 9
 ! Remove the ugly scrollbar
 URxvt.scrollBar: false
 ! Nice looking font, small but legible
-URxvt.font: xft:Terminus:mono:size=8
+URxvt.font: xft:DejaVu Sans:mono:size=9
 ! Remove the weird spacing around characters
 URxvt.letterSpace: -5
 
