@@ -301,6 +301,16 @@ let g:ale_echo_msg_error_str='E'
 let g:ale_echo_msg_format='[%linter%][%severity%]%(code):% %s'
 " The message displayed in the location list
 let g:ale_loclist_msg_format='[%linter%]%(code):% %s'
+
+" C/C++ settings {{{
+""""""""""""""""
+" More warnings and the usual version in flags for Clang
+let g:ale_c_clang_options='-Wall -Wextra -pedantic -std=c99'
+let g:ale_cpp_clang_options='-Wall -Wextra -pedantic -std=c++17'
+" More warnings and the usual version in flags for GCC
+let g:ale_c_gcc_options='-Wall -Wextra -pedantic -std=c99'
+let g:ale_cpp_gcc_options='-Wall -Wextra -pedantic -std=c++17'
+" }}}
 " }}}
 " }}}
 
