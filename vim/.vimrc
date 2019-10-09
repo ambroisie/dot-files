@@ -326,6 +326,8 @@ nnoremap Y y$
 " Map leader to space (needs the noremap trick)
 nnoremap <Space> <Nop>
 let mapleader=" "
+" Map localleader to '!' (if I want to filter text, I use visual mode)
+let maplocalleader="!"
 
 " Mappings for working with this file.
 map <Leader>ev :edit $MYVIMRC<CR>
