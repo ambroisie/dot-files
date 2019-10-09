@@ -313,6 +313,16 @@ let g:ale_cpp_clang_options='-Wall -Wextra -pedantic -std=c++17'
 let g:ale_c_gcc_options='-Wall -Wextra -pedantic -std=c99'
 let g:ale_cpp_gcc_options='-Wall -Wextra -pedantic -std=c++17'
 " }}}
+
+" Rust settings {{{
+""""""""""""""""
+" Check tests too
+let g:ale_rust_cargo_check_tests=1
+" Check examples too
+let g:ale_rust_cargo_check_examples=1
+" Use clippy if it's available instead of just cargo check
+let g:ale_rust_cargo_use_clippy=executable('cargo-clippy')
+" }}}
 " }}}
 " }}}
 
