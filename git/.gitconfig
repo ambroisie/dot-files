@@ -17,6 +17,12 @@
 [rebase]
     autoSquash = true
     autoStash = true
+[blame]
+    coloring = repeatedLines
+    markUnblamables = true
+    markIgnoredLines = true
+[diff]
+    algorithm = patience
 [pager]
     diff = /usr/share/git/diff-highlight/diff-highlight | less
     log = /usr/share/git/diff-highlight/diff-highlight | less
