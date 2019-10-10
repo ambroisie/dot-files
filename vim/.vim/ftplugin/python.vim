@@ -3,6 +3,9 @@ let b:ale_fixers=[ 'black', 'isort' ]
 " Use my desired ALE linters for python
 let b:ale_linters=[ 'flake8', 'mypy', 'pylint', 'pyls' ]
 
+"let b:ale_python_pyls_executable='pyls'
+let b:ale_python_pyls_auto_pipenv=1
+
 " Disable pycodestyle checks from pyls because I'm already using flake8
 let b:ale_python_pyls_config={
   \     'pyls': {
