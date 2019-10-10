@@ -55,9 +55,6 @@ source ~/.profile
 # Import my prompt
 source ~/.bash_prompt
 
-# set PATH so it includes user's private bin directories
-PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-
 # Export our directory to Termite for opening new terminals
 if [[ $TERM == xterm-termite ]]; then
   . /etc/profile.d/vte.sh
