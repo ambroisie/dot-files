@@ -9,6 +9,7 @@ stow -t ~ flake8
 stow -t ~ git
 stow -t ~ i3
 stow -t ~ i3blocks
+stow -t ~ isort
 stow -t ~ ranger
 stow -t ~ redshift
 stow -t ~ rofi
