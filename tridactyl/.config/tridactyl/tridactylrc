@@ -46,6 +46,15 @@ command hint_focus hint -;
 " Open right click menu on links
 bind ;C composite hint_focus; !s xdotool key Menu
 
+" Search forward
+ bind / fillcmdline find
+ " Search backward
+ bind ? fillcmdline find -?
+ " Go to the next match
+ bind n findnext 1
+ " Go to the previous match
+ bind N findnext -1
+
 " Allow Tridactyl and other extensions on Mozilla reserved pages
 command fixamo_quiet jsb tri.excmds.setpref("privacy.resistFingerprinting.block_mozAddonManager", "true").then(tri.excmds.setpref("extensions.webextensions.restrictedDomains", '""'))
 command fixamo js tri.excmds.setpref("privacy.resistFingerprinting.block_mozAddonManager", "true").then(tri.excmds.setpref("extensions.webextensions.restrictedDomains", '""').then(tri.excmds.fillcmdline_tmp(3000, "Permissions added to user.js. Please restart Firefox to make them take affect.")))
