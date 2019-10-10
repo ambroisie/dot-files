@@ -33,8 +33,8 @@ if { [ -n "$BASH_VERSION" ] && shopt -q login_shell; } ||
 
     # Use less as my default pager
     export PAGER=less
-    # Allow for colorful man pages, clear the screen on exit
-    export LESS='-R -+X'
+    # Allow for colorful man pages, clear the screen on start and exit
+    export LESS='-R -+X -c'
     export LESS_TERMCAP_mb=$'\E[1;31m'     # begin blink
     export LESS_TERMCAP_md=$'\E[1;36m'     # begin bold
     export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
