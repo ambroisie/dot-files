@@ -103,6 +103,8 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'tpope/vim-vinegar'
 " Better quick-fix window
 Plug 'romainl/vim-qf'
+" Better folding
+Plug 'Konfekt/FastFold'
 " }}}
 
 " Mappings {{{
@@ -328,6 +330,15 @@ let g:ale_rust_cargo_check_examples=1
 " Use clippy if it's available instead of just cargo check
 let g:ale_rust_cargo_use_clippy=executable('cargo-clippy')
 " }}}
+" }}}
+
+" FastFold settings {{{
+"""""""""""""""""""
+" Intercept all fold commands
+let g:fastfold_fold_command_suffixes=[
+  \     'x', 'X', 'a', 'A', 'o', 'O', 'c', 'C',
+  \     'r', 'R', 'm', 'M', 'i', 'n', 'N'
+  \ ]
 " }}}
 " }}}
 
