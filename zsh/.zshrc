@@ -24,6 +24,8 @@ unsetopt autocd beep extendedglob notify
 
 # Use the emacs keybindings
 bindkey -e
+# Fix delete key not working
+bindkey "\e[3~" delete-char
 
 # Completion configuration
 zstyle :compinstall filename '/home/ambroisie/.zshrc'
