@@ -79,7 +79,7 @@ Plug 'tpope/vim-sensible'
 Plug 'ntpeters/vim-better-whitespace'
 " }}}
 
-" Program specific plug-ins {{{
+" Program/language specific {{{
 """""""""""""""""""""""""""
 " Pandoc syntax file
 Plug 'vim-pandoc/vim-pandoc-syntax'
@@ -93,6 +93,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Pre-written functions for fzf mappings
 Plug 'junegunn/fzf.vim'
+" Rust syntax, folding, compiler etc...
+Plug 'rust-lang/rust.vim'
 " }}}
 
 " Vim facilities enhancement {{{
@@ -125,11 +127,6 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " }}}
 
-" Rust {{{
-""""""
-Plug 'rust-lang/rust.vim'
-" }}}
-"
 " LSP {{{
 """""
 " Asynchronous Linting Engine
