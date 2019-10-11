@@ -374,6 +374,14 @@ nmap <Leader>fh :History<CR>
 nmap <Leader>ft :BTags<CR>
 " Tags in all project files
 nmap <Leader>fT :Tags<CR>
+" Snippets for the current fileytpe (using Ultisnips)
+nmap <Leader>fs :Snippets<CR>
+" All available commands
+nmap <Leader>f: :Commands<CR>
+" All commits (using fugitive)
+nmap <Leader>fc :Commits<CR>
+" All commits for the current buffer (using fugitive)
+nmap <Leader>fC :BCommits<CR>
 " }}}
 
 " Git and diff mappings {{{
