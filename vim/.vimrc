@@ -89,6 +89,8 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'tpope/vim-git'
 " An awesome git wrapper
 Plug 'tpope/vim-fugitive'
+" Show git messages in preview window
+Plug 'rhysd/git-messenger.vim'
 " Fuzzy file finder (installs zfz system-wide)
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Pre-written functions for fzf mappings
