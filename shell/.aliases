@@ -1,6 +1,3 @@
-# Useful when changing urxvt colors
-alias ureload='xrdb -merge ~/.Xresources'
-
 # Shortcut to script with configuration
 alias lock='i3exit lock'
 
