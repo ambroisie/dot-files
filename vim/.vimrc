@@ -416,12 +416,6 @@ nnoremap <Leader>gm :Gmove<Space>
 nnoremap <Leader>gb :Gblame<CR>
 " Commit staged changes, open a new tab just for it
 nnoremap <Leader>gc :Gcommit -v -q<CR>
-" Invoke git-push with arguments, populate quick-fix list
-nnoremap <Leader>gpu :Gpush<Space>
-" Invoke git-pull with arguments, populate quick-fix list
-nnoremap <Leader>gpl :Gpull<Space>
-" Invoke git-merge with arguments, populate quick-fix list
-nnoremap <Leader>gm :Gmerge<Space>
 " }}}
 " }}}
 
