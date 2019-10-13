@@ -69,6 +69,7 @@
     chop = gc --prune=now
     optimize = repack -a -d -f --depth=250 --window=250
     pf = pull --ff-only
+    m4 = mergetool -t vimdiff
 
 [filter "lfs"]
     clean = git-lfs clean -- %f
