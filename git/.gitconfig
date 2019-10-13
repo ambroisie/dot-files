@@ -40,6 +40,13 @@
 [diff]
     algorithm = patience
 
+[merge]
+    tool = fugitive
+
+[mergetool "fugitive"]
+    cmd = vim -f -c \"Gdiff!\" \"$MERGED\"
+    trustExitCode = true
+
 [pager]
     diff = /usr/share/git/diff-highlight/diff-highlight | less
     log = /usr/share/git/diff-highlight/diff-highlight | less
