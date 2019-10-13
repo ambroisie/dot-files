@@ -101,8 +101,6 @@ Plug 'rust-lang/rust.vim'
 
 " Vim facilities enhancement {{{
 """"""""""""""""""""""""""""
-" Relative numbers only on focused buffer
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
 " A better netrw
 Plug 'tpope/vim-vinegar'
 " Better quick-fix window
@@ -154,8 +152,6 @@ autocmd FileType netrw setlocal bufhidden=delete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set the minimal amount of lignes under and above the cursor for context
 set scrolloff=5
-" Show line number (needed for number toggle)
-set number
 " Always show status line
 set laststatus=2
 " Enable Doxygen highlighting
