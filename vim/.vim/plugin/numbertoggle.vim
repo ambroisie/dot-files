@@ -8,4 +8,6 @@ augroup numbertoggle
     " Toggle numbers between relative and absolute when changing buffers
     autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
     autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
+    " Disable line numbers and relative line numbers in terminal
+    autocmd TerminalOpen * setlocal nonu nornu
 augroup END
