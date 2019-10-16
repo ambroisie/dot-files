@@ -279,3 +279,5 @@ for_window [class="tridactyl_editor"] floating enable border pixel 1
 for_window [class="^Blueman-.*$"] floating enable
 # Make htop windows floating by default
 for_window [title="^htop$"] floating enable
+# Make Thunderbird filter window floating by default
+for_window [class="Thunderbird" instance="Mailnews" window_role="filterlist"] floating enable
