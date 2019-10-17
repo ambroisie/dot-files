@@ -306,25 +306,6 @@ let g:ale_echo_msg_format='[%linter%][%severity%]%(code):% %s'
 " The message displayed in the location list
 let g:ale_loclist_msg_format='[%linter%]%(code):% %s'
 
-" C/C++ settings {{{
-""""""""""""""""
-" More warnings and the usual version in flags for Clang
-let g:ale_c_clang_options='-Wall -Wextra -pedantic -std=c99'
-let g:ale_cpp_clang_options='-Wall -Wextra -pedantic -std=c++17'
-" More warnings and the usual version in flags for GCC
-let g:ale_c_gcc_options='-Wall -Wextra -pedantic -std=c99'
-let g:ale_cpp_gcc_options='-Wall -Wextra -pedantic -std=c++17'
-" }}}
-
-" Rust settings {{{
-""""""""""""""""
-" Check tests too
-let g:ale_rust_cargo_check_tests=1
-" Check examples too
-let g:ale_rust_cargo_check_examples=1
-" Use clippy if it's available instead of just cargo check
-let g:ale_rust_cargo_use_clippy=executable('cargo-clippy')
-" }}}
 " }}}
 
 " FastFold settings {{{
