@@ -107,6 +107,8 @@ Plug 'tpope/vim-vinegar'
 Plug 'romainl/vim-qf'
 " Better folding
 Plug 'Konfekt/FastFold'
+" A nice little cheat-sheet
+Plug 'lifepillar/vim-cheat40'
 " }}}
 
 " Mappings {{{
@@ -361,6 +363,9 @@ omap ( [
 omap ) ]
 xmap ( [
 xmap ) ]
+
+" Map for vim-cheat40 which seems to fail because of my <Space> to <Nop> map
+map <Leader>? :<C-u>Cheat40<CR>
 " }}}
 
 " Mapping for quickfix bindings {{{
