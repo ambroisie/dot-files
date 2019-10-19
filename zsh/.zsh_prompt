@@ -50,4 +50,4 @@ function __prompt_nonzero_return() {
     [ $RETVAL -ne 0 ] && echo "[$RETVAL]"
 }
 
-PS1='[%F{green}%n%f@%F{blue}%m%f %F{cyan}%B%~%b%f]'$'\e[36m''`__prompt_parse_git_branch`'$'\e[0m\n42sh$ '
+PS1='%F{red}`__prompt_nonzero_return`%F{none}[%F{green}%n%f@%F{blue}%m%f %F{cyan}%B%~%b%f]'$'\e[36m''`__prompt_parse_git_branch`'$'%F{none}\n42sh$ '
