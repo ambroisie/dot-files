@@ -36,8 +36,6 @@ set softtabstop=-1
 set shiftround
 " You shouldn't change the default tab width of 8 characters
 set tabstop=8
-" Makefiles should use tabs to indent
-autocmd Filetype make setlocal noexpandtab
 " }}}
 
 " Plugins {{{
