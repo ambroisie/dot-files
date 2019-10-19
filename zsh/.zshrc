@@ -1,3 +1,11 @@
+# Export our directory to Termite for opening new terminals
+if [[ $TERM == xterm-termite ]]; then
+  . /etc/profile.d/vte.sh
+  __vte_osc7
+fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # History configuration
 HISTFILE=~/.zhistory
 HISTSIZE=10000
@@ -97,11 +105,3 @@ source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.
 
 # import my prompt
 source ~/.zsh_prompt
-
-# Export our directory to Termite for opening new terminals
-if [[ $TERM == xterm-termite ]]; then
-  . /etc/profile.d/vte.sh
-  __vte_osc7
-fi
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

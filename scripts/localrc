@@ -1,0 +1,117 @@
+# This script applies local configuration changes from the start of your
+# file hierarchy tree down to your current working directory.
+#
+# When you change dirctories it automatically undoes those changes by using
+# the command contained in the associative array `__undo_commands` starting by
+# the ones furthest down until the common ancestor with your current
+#
+# The '.localrc' files should add an undo command to __undo_commands which is
+# keyed with the '__UNDO_DIR' variable (i.e: __undo_commands[$__UNDO_DIR]='...')
+# This variable will be eval-ed to undo your local changes.
+#
+# Example 1: a project that needs to have the PATH pre-pended
+#
+#     # Taking advantage of PATH being expanded when sourcing the file
+#     __undo_commands[$__UNDO_DIR]="export PATH='$PATH'"
+#     export PATH="$__UNDO_DIR/bin:$PATH"
+#
+# Example 2: a project that needs to activate a virtualenv
+#
+#     __undo_commands[$__UNDO_DIR]='deactivate'
+#     source env/bin/activate
+
+# Contains the commands to undo the changes made in a directory
+declare -A __undo_commands
+# Contains the PWD of the previous command (and not $OLDPWD)
+__LAST_PWD='/'
+# Declare this variable to print some debug information
+#DEBUG_LOCALRC=toto
+
+# Source localrc files from "$1" and its parents unless we find "$2" and stop
+function __source_localrc_files_rec() {
+    # "$1" and "$2" should not have any trailing slashes unless they are '/'
+    if [ "$1" != "$2" ]; then
+        # FIXME: condition should be unnecessary, but is there to avoid loops
+        [ "$1" != '/' ] && __source_localrc_files_rec "$(dirname "$1")" "$2"
+
+        # Export the special '__UNDO_DIR' variable to key into '__undo_commands'
+        export __UNDO_DIR="$1"
+        local localrc="$1/.localrc"
+        # The post-fix traversal sourced the parent before the child
+        if [ -r "$localrc" ]; then
+            source "$localrc"
+
+            if [ -n "${DEBUG_LOCALRC+set}" ]; then
+                echo "sourced $localrc with __UNDO_DIR as '$__UNDO_DIR'"
+            fi
+        fi
+        unset -v __UNDO_DIR
+    fi
+}
+
+# Undo the changes made by "$1" and its parents unless we find "$2" and stop
+function __undo_localrc_changes() {
+    # Undo the changes for our parent directory if we aren't at the common root
+    if [ "$1" != "$2" ]; then
+        # If there is a command to undo the changes for that directory, do it
+        [ -n "${DEBUG_LOCALRC+set}" ] && echo "Looking at undoing $1"
+        if [ -n "${__undo_commands[$1]+set}" ]; then
+            eval "${__undo_commands[$1]}"
+
+            [ -n "${DEBUG_LOCALRC+set}" ] && echo "undid $1/.localrc"
+        fi
+
+        # FIXME: condition should be unnecessary, but is there to avoid loops
+        [ "$1" != '/' ] && __undo_localrc_changes "$(dirname "$1")" "$2"
+    fi
+}
+
+# Return the closest common parent directory of "$1" and "$2"
+function common_parent() {
+    local directories=("$1")
+
+    while [ "${directories[-1]}" != '/' ]; do
+        directories+=("$(dirname "${directories[-1]}")")
+    done
+
+    for candidate in "${directories[@]}"; do
+        case "$2" in
+            "$candidate"*) printf "%s" "$candidate"; break;;
+        esac
+    done
+}
+
+function __source_localrc_files() {
+    # Only do it if we changed our directory since the last command
+    if [ "$__LAST_PWD" = "$PWD" ]; then
+        return 0
+    fi
+
+    # Find the closest common parent directory
+    local parent='/'
+    if [ -n "$__LAST_PWD" ]; then
+        parent=$(common_parent "$__LAST_PWD" "$PWD")
+    fi
+
+    if [ -n "${DEBUG_LOCALRC+set}" ]; then
+        echo "DEBUG"
+        echo "LAST:   $__LAST_PWD"
+        echo "CUR:    $PWD"
+        echo "PARENT: $parent"
+    fi
+
+    __undo_localrc_changes "$__LAST_PWD" "$parent"
+    __source_localrc_files_rec "$PWD" "$parent"
+
+    # Update our last seen working directory
+    __LAST_PWD="$PWD"
+}
+
+# Execute this command every time
+if [ -n "$BASH_VERSION" ]; then
+    [ -n "${DEBUG_LOCALRC+set}" ] && echo "Loaded Bash"
+    PROMPT_COMMAND="__source_localrc_files; $PROMPT_COMMAND"
+elif [ -n "$ZSH_VERSION" ]; then
+    [ -n "${DEBUG_LOCALRC+set}" ] && echo "Loaded Zsh"
+    precmd_functions+=( __source_localrc_files)
+fi

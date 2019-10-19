@@ -5,6 +5,14 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Export our directory to Termite for opening new terminals
+if [[ $TERM == xterm-termite ]]; then
+  . /etc/profile.d/vte.sh
+  __vte_prompt_command
+fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # Make colorcoding available for everyone
 
 Black='\e[0;30m'        # Black
@@ -54,11 +62,3 @@ source ~/.profile
 
 # Import my prompt
 source ~/.bash_prompt
-
-# Export our directory to Termite for opening new terminals
-if [[ $TERM == xterm-termite ]]; then
-  . /etc/profile.d/vte.sh
-  __vte_prompt_command
-fi
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
