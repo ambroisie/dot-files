@@ -88,6 +88,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Rust syntax, folding, compiler etc...
 Plug 'rust-lang/rust.vim'
+" A better GNU Info reader than info
+Plug 'HiPhish/info.vim', { 'on': 'Info' }
 " }}}
 
 " Vim facilities enhancement {{{
