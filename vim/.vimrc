@@ -249,7 +249,7 @@ let g:lightline.component_expand={
 let g:lightline.component_type={
   \   'readonly': 'error',
   \   'linter_checking': 'left',
-  \   'linter_warnings': 'warning',
+  \   'linter_warn': 'warning',
   \   'linter_errors': 'error',
   \   'linter_ok': 'left',
   \ }
