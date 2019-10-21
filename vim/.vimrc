@@ -65,8 +65,6 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'morhetz/gruvbox'
 " Fancy status bar
 Plug 'itchyny/lightline.vim'
-" Add the gruvbox theme to my status line
-Plug 'shinchu/lightline-gruvbox.vim'
 " }}}
 
 " Minimum viable vim config {{{
