@@ -14,11 +14,6 @@ set hidden
 " Allow command completion in command-line
 set wildmenu
 
-" Enable spell-check
-set spell
-" Use the US English dictionary
-set spelllang=en_us
-
 " Enable syntax high-lighting and file-type specific plugins
 syntax on
 filetype plugin indent on
