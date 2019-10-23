@@ -11,8 +11,6 @@ if [[ $TERM == xterm-termite ]]; then
   __vte_prompt_command
 fi
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 # Make colorcoding available for everyone
 
 Black='\e[0;30m'        # Black
@@ -62,3 +60,6 @@ source ~/.profile
 
 # Import my prompt
 source ~/.bash_prompt
+
+# Use fzf for backwards search
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
