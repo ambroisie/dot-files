@@ -2,6 +2,7 @@
 if [[ $TERM == xterm-termite ]]; then
   . /etc/profile.d/vte.sh
   __vte_osc7
+  precmd_functions+=(__vte_prompt_command) # FIXME: why isn't it set above ?
 fi
 
 # History configuration
