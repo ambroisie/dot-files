@@ -5,7 +5,7 @@ let b:undo_ftplugin.='|unlet b:ale_fixers'
 let b:ale_linters=[ 'flake8', 'mypy', 'pylint', 'pyls' ]
 let b:undo_ftplugin.='|unlet b:ale_linters'
 
-"let b:ale_python_pyls_executable='pyls'
+" Use pyls inside the python environment if needed
 let b:ale_python_pyls_auto_pipenv=1
 let b:undo_ftplugin.='|unlet b:ale_python_pyls_auto_pipenv'
 
@@ -20,6 +20,13 @@ let b:ale_python_pyls_config={
   \     },
   \  }
 let b:undo_ftplugin.='|unlet b:ale_python_pyls_config'
+
+" Don't use mypy to check for syntax errors
+let b:ale_python_mypy_ignore_invalid_syntax=1
+let b:undo_ftplugin.='|unlet b:ale_python_mypy_ignore_invalid_syntax'
+" Use mypy inside the python environment if needed
+let b:ale_python_mypy_auto_pipenv=1
+let b:undo_ftplugin.='|unlet b:ale_python_mypy_auto_pipenv'
 
 " Change max length of a line to 88 for this buffer to match black's settings
 setlocal colorcolumn=88
