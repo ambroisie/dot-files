@@ -1,6 +1,5 @@
-if !exists("b:undo_ftplugin")
-    let b:undo_ftplugin=''
-endif
+" Create the `b:undo_ftplugin` variable if it doesn't exist
+call ftplugined#check_undo_ft()
 
 " More warnings and the usual version in flags for Clang
 let b:ale_cpp_clang_options='-Wall -Wextra -pedantic -std=c++17'
