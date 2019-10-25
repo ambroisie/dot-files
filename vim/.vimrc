@@ -409,8 +409,6 @@ nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gd :Gdiffsplit!<CR>
 " Open current file log in new tab, populate its location list with history
 nnoremap <Leader>gl :sp<CR><C-w>T:Gllog --follow -- %:p<CR>
-" Use git-mv and rename the buffer, backspace and add '!' to use the '-f' flag
-nnoremap <Leader>gm :Gmove<Space>
 " Open a buffer to the left with blame information
 nnoremap <Leader>gb :Gblame<CR>
 " Commit staged changes, open a new tab just for it
