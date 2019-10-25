@@ -1,3 +1,7 @@
+if !exists("b:undo_ftplugin")
+    let b:undo_ftplugin=''
+endif
+
 " Check tests too
 let b:ale_rust_cargo_check_tests=1
 let b:undo_ftplugin='|unlet b:ale_rust_cargo_check_tests'

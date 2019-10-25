@@ -1,3 +1,7 @@
+if !exists("b:undo_ftplugin")
+    let b:undo_ftplugin=''
+endif
+
 " Use my desired ALE fixers for python
 let b:ale_fixers=[ 'black', 'isort' ]
 let b:undo_ftplugin.='|unlet b:ale_fixers'

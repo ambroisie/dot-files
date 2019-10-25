@@ -1,3 +1,7 @@
+if !exists("b:undo_ftplugin")
+    let b:undo_ftplugin=''
+endif
+
 " More warnings and the usual version in flags for Clang
 let b:ale_c_clang_options='-Wall -Wextra -pedantic -std=c99'
 let b:undo_ftplugin.='|unlet b:ale_c_clang_options'

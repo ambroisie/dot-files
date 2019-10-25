@@ -1,3 +1,7 @@
+if !exists("b:undo_ftplugin")
+    let b:undo_ftplugin=''
+endif
+
 " Use shfmt as ALE fixer for zsh
 let b:ale_fixers=[ 'shfmt' ]
 let b:undo_ftplugin.='|unlet b:ale_fixers'
