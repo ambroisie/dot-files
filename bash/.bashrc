@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 # Export our directory to Termite for opening new terminals
-if [[ $TERM == xterm-termite ]]; then
+if [[ "$TERM" == xterm-termite ]] || [[ "$TERM" == xterm ]]; then
   . /etc/profile.d/vte.sh
   __vte_prompt_command
 fi
