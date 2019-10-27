@@ -59,3 +59,12 @@ function mcd() {
 function meteo() {
     curl "http://wttr.in/$1" # Bonus: try to see the weather on 'moon'
 }
+
+# Use Vim as an Info reader with a plug-in
+function vinfo() {
+    page="$1"
+    shift
+    node="${*// /\ }"
+    echo vim "+Info $page $node" "+only"
+    vim "+Info $page $node" "+only"
+}
