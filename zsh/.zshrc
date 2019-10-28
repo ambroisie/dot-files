@@ -33,6 +33,8 @@ unsetopt autocd beep extendedglob notify
 bindkey -e
 # Fix delete key not working
 bindkey "\e[3~" delete-char
+# Fix Ctrl+u killing from the cursor instead of the whole line
+bindkey \^U backward-kill-line
 
 # Completion configuration
 zstyle :compinstall filename '/home/ambroisie/.zshrc'
