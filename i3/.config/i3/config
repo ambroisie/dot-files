@@ -221,11 +221,10 @@ bar {
         }
 }
 
-# Shtudown menu
+# Shutdown menu
 set $mode_shutdown (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 
 mode "$mode_shutdown" {
-        # FIXME: add scripts folder to git
         bindsym l exec --no-startup-id i3exit lock, mode "default"
         bindsym s exec --no-startup-id i3exit suspend, mode "default"
         bindsym u exec --no-startup-id i3exit switch_user, mode "default"
