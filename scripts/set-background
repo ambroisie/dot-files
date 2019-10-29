@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# The main background with with horizontal orientation (16:9)
+main_bg="$HOME/Pictures/wallpapers/starry-night-tree.png"
+
+# The background for the second screen vertical orientation (9:16)
+vert_bg="$HOME/Pictures/wallpapers/lonely-valley.jpg"
+# The background for the second screen horizontal orientation (16:9)
+horiz_bg="$HOME/Pictures/wallpapers/cyberpunk-street.png"
+
+# When only the main screen is connected, the second background doesn't display
+case "$1" in
+    vertical)
+        feh --bg-fill "$main_bg" --bg-fill "$vert_bg";;
+    horizontal)
+        feh --bg-fill "$main_bg" --bg-fill "$horiz_bg";;
+esac
