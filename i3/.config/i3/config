@@ -241,6 +241,21 @@ mode "$mode_shutdown" {
 # Bind it to the Meta + '0' key
 bindsym $mod+agrave mode "$mode_shutdown"
 
+# Set second display background according to orientation
+set $mode_background (v)ertical layout, (h)orizontal layout
+
+mode "$mode_background" {
+        bindsym v exec --no-startup-id set-background vertical, mode "default"
+        bindsym h exec --no-startup-id set-background horizontal, mode "default"
+
+        # exit background mode: "Enter" or "Escape"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+b mode "$mode_background"
+
+
 # Display indicators for caps-lock and num-lock
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 #bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
@@ -272,8 +287,8 @@ exec --no-startup-id i3-battery-popup -n -L 15 -l 5
 # Autolock after 1 minute without any input, lock on upper-left, don't in lower-right
 exec --no-startup-id xautolock -time 1 -cornerredelay 5 -corners +00- -locker "~/scripts/i3exit lock"
 
-# Set the wallpaper
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/starry-night-tree.png
+# Set the wallpaper using the last settings
+exec --no-startup-id ~/.fehbg
 
 # Make tridactyl-spawned editor floating by default
 for_window [class="tridactyl_editor"] floating enable border pixel 1
