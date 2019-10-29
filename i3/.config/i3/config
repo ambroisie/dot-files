@@ -265,7 +265,7 @@ bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -R
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
 # Bind keyboard settings key to toggle touchpad
-bindsym XF86Tools exec toggle_touchpad
+bindsym XF86Tools exec toggle-touchpad
 # Bind display control to launch arandr
 bindsym XF86Display exec arandr
 
