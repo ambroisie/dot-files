@@ -29,7 +29,5 @@ stow -t ~ shell/
 # Wallpapers
 stow -t ~ wallpapers/
 
-# Create the directory if needed
-mkdir -p ~/.local/share/applications
 # Symlink the '.desktop' files (btmenu needs one)
-stow -t ~/.local/share/applications desktop
+stow -t ~ desktop
