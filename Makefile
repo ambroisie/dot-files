@@ -82,13 +82,13 @@ all: install
 # Install packages and their dependencies
 .PHONY: install-cli
 install-cli: install-cli-deps
-install-cli: $(addprefix stow-,$(CLI_PACKAGES))
+install-cli: link-cli
 install-cli: rust
 
 .PHONY: install
 install: install-cli
 install: install-visual-deps
-install: $(addprefix stow-,$(VISUAL_PACKAGES))
+install: link-visual
 
 .PHONY: install-cli-deps
 install-cli-deps:
@@ -97,6 +97,13 @@ install-cli-deps:
 .PHONY: install-visual-deps
 install-visual-deps:
 	yay -S $(VISUAL_DEPENDENCIES)
+
+# Linking packages
+.PHONY: link-cli
+link-cli: $(addprefix stow-,$(CLI_PACKAGES))
+
+.PHONY: link-visual
+link-visual: $(addprefix stow-,$(VISUAL_PACKAGES))
 
 # Installing configuration packages
 stow-%: %
@@ -110,6 +117,20 @@ stow-scripts: scripts
 stow-vim: vim
 	$(STOW) $<
 	vim +PlugInstall
+
+# Removing packages
+unlink: unlink-cli unlink-visual
+
+unlink-cli: $(addprefix unstow-,$(CLI_PACKAGES))
+
+unlink-visual: $(addprefix unstow-,$(VISUAL_PACKAGES))
+
+unstow-%:
+	$(STOW) -D $*
+
+unstow-scripts: STOW_TARGET=~/.scripts
+unstow-scripts:
+	$(STOW) -D scripts
 
 # Development related installations
 .PHONY: rust
