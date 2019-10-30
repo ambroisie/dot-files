@@ -10,6 +10,8 @@ horiz_bg="$HOME/Pictures/wallpapers/cyberpunk-street.png"
 
 # When only the main screen is connected, the second background doesn't display
 case "$1" in
+    single)
+        feh --bg-fill "$main_bg";;
     vertical)
         feh --bg-fill "$main_bg" --bg-fill "$vert_bg";;
     horizontal)

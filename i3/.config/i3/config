@@ -241,12 +241,13 @@ mode "$mode_shutdown" {
 # Bind it to the Meta + '0' key
 bindsym $mod+agrave mode "$mode_shutdown"
 
-# Set second display background according to orientation
-set $mode_background (v)ertical layout, (h)orizontal layout
+# Set second display background according to orientation, or none
+set $mode_background (v)ertical layout, (h)orizontal layout, (s)ingle layout
 
 mode "$mode_background" {
         bindsym v exec --no-startup-id set-background vertical, mode "default"
         bindsym h exec --no-startup-id set-background horizontal, mode "default"
+        bindsym s exec --no-startup-id set-background single, mode "default"
 
         # exit background mode: "Enter" or "Escape"
         bindsym Return mode "default"
