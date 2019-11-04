@@ -5,6 +5,10 @@ nnoremap Y y$
 nnoremap <Leader>ev :edit $MYVIMRC<CR>
 nnoremap <Leader>es :source $MYVIMRC<CR>
 
+" Easier escape from insert mode
+inoremap jkj <Esc>
+inoremap kjk <Esc>
+
 " Run make silently, then skip the 'Press ENTER to continue'
 noremap <Leader>m :silent! :make! \| :redraw!<CR>
 
