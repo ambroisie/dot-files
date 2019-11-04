@@ -4,6 +4,7 @@ nnoremap Y y$
 " Mappings for working with vimrc
 nnoremap <Leader>ev :edit $MYVIMRC<CR>
 nnoremap <Leader>es :source $MYVIMRC<CR>
+nnoremap <Leader>et :source %<CR>
 
 " Easier escape from insert mode
 inoremap jkj <Esc>
