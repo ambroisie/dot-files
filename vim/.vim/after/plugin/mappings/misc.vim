@@ -1,9 +1,11 @@
 " Yank until the end of line with Y, to be more consistent with D and C
 nnoremap Y y$
 
-" Mappings for working with vimrc
+" Edit my vimrc in the current buffer
 nnoremap <Leader>ev :edit $MYVIMRC<CR>
+" Source my vimrc
 nnoremap <Leader>es :source $MYVIMRC<CR>
+" Source the current buffer
 nnoremap <Leader>et :source %<CR>
 
 " Easier escape from insert mode
