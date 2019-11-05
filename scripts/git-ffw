@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+# Adapted from <https://stackoverflow.com/questions/4318161>
+
+SHOW_UPDATE=0
+
+usage() {
+    echo "usage: git ffwd [remote]..."
+    echo ""
+    echo "Fast forward all local branches tracking remote branches"
+    echo "If given a list of remote, will update branches tracking those"
+    echo "Otherwise will update all remotes"
+}
+
+ffwd() {
+    CLB="$(git rev-parse --abbrev-ref HEAD)"
+
+    for REMOTE in "$@"; do
+        git remote update "$REMOTE"
+        while read -r RB LB; do
+            ARB="refs/remotes/$REMOTE/$RB"
+            ALB="refs/heads/$LB"
+            NBEHIND=$(( $(git rev-list --count "$ALB..$ARB" 2>/dev/null) +0))
+            NAHEAD=$(( $(git rev-list --count "$ARB..$ALB" 2>/dev/null) +0))
+            if [ "$NBEHIND" -gt 0 ]; then
+                if [ "$NAHEAD" -gt 0 ]; then
+                    echo " branch $LB is $NBEHIND commit(s) behind and $NAHEAD commit(s) ahead of $REMOTE/$RB. could not be fast-forwarded"
+                elif [ "$LB" = "$CLB" ]; then
+                    echo " branch $LB was $NBEHIND commit(s) behind of $REMOTE/$RB. fast-forward merge"
+                    git merge --ff -q "$ARB" # Can't reset the current branch
+                else
+                    echo " branch $LB was $NBEHIND commit(s) behind of $REMOTE/$RB. resetting local branch to remote"
+                    git branch -f "$LB" -t "$ARB" >/dev/null
+                fi
+            elif [ "$SHOW_UPDATE" -eq 1 ]; then
+                echo " nothing to do for branch $LB"
+            fi
+        done <<< "$(git remote show "$REMOTE" -n |
+                    awk '/merges with remote/{print $5" "$1}')"
+    done
+}
+
+REMOTES=()
+if [ $# -gt 0 ]; then
+    # Check for help flag
+    for arg in "$@"; do
+        case "$arg" in
+            --help|-h)
+                usage
+                exit 0
+                ;;
+            --show-update|-s)
+                SHOW_UPDATE=1
+                ;;
+            *)
+                REMOTES+=("$arg")
+                ;;
+        esac
+    done
+fi
+
+if [ ${#REMOTE[@]} -gt 0 ]; then
+    # Call ffwd with all given remotes
+    ffwd "${REMOTE[@]}"
+else
+    # Call ffwd with all remotes in the repository
+    ffwd "$(git remote)"
+fi
