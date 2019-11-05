@@ -160,8 +160,8 @@ set t_vb=
 set colorcolumn=80
 " Show whitespace
 set list
-" Show a tab as an arrow, and spaces as dots
-set listchars=tab:»·,trail:·
+" Show a tab as an arrow, trailing spaces as ¤, non-breaking spaces as dots
+set listchars=tab:>─,trail:·,nbsp:¤
 
 " Timeout quickly on shortcuts, I can't wait two seconds to delete in visual
 set timeoutlen=500
