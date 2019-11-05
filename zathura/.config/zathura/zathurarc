@@ -1,0 +1,5 @@
+# Show '~' instead of full path to '$HOME' in window title
+set window-title-home-tilde true
+
+# Show '~' instead of full path to '$HOME' in status bar
+set statusbar-home-tilde true

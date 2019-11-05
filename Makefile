@@ -20,6 +20,7 @@ VISUAL_PACKAGES := \
 	termite \
 	tridactyl \
 	wallpapers \
+	zathura \
 
 CLI_DEPENDENCIES := \
 	aur/bitwarden-cli \
