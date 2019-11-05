@@ -286,7 +286,7 @@ exec --no-startup-id dunst
 # Notify when battery is at 15% and 5% percent
 exec --no-startup-id i3-battery-popup -n -L 15 -l 5
 # Autolock after 1 minute without any input, lock on upper-left, don't in lower-right
-exec --no-startup-id xautolock -time 1 -cornerredelay 5 -corners +00- -locker "~/scripts/i3exit lock"
+exec --no-startup-id xautolock -time 1 -cornerredelay 5 -corners +00- -locker "i3exit lock"
 
 # Set the wallpaper using the last settings
 exec --no-startup-id ~/.fehbg
