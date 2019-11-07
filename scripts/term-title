@@ -1,0 +1,45 @@
+# A script to display $USER@$HOST:$PWD with PWD shortened in terminal title
+# Taken mostly verbatim from 'vte.sh' provided with VTE-based shells
+
+__term_title_urlencode() (
+# This is important to make sure string manipulation is handled
+# byte-by-byte.
+LC_ALL=C
+str="$1"
+while [ -n "$str" ]; do
+    safe="${str%%[!a-zA-Z0-9/:_\.\-\!\'\(\)~]*}"
+    printf "%s" "$safe"
+    str="${str#"$safe"}"
+    if [ -n "$str" ]; then
+        printf "%%%02X" "'$str"
+        str="${str#?}"
+    fi
+done
+)
+
+__term_title () {
+    printf "\033]7;file://%s%s\033\\" "${HOST:-}" "$(__term_title_urlencode "${PWD}")"
+}
+
+__term_title_prompt_command() {
+    local pwd='~'
+    [ "$PWD" != "$HOME" ] && pwd=${PWD/#$HOME\//\~\/}
+    pwd="${pwd//[[:cntrl:]]}"
+    if [ -n "$BASH_VERSION" ]; then
+        if command -v hostname &>/dev/null; then
+            export HOSTNAME="$(hostname)"
+            export HOST="$HOSTNAME"
+        fi
+    fi
+    printf "\033]0;%s@%s:%s\033\\%s" "${USER}" "${HOST%%.*}" "${pwd}" "$(__term_title)"
+}
+
+case "$TERM" in
+    xterm*|term_title*)
+        [ -n "$BASH_VERSION" ] && PROMPT_COMMAND="__term_title_prompt_command;$PROMPT_COMMAND"
+        [ -n "$ZSH_VERSION"  ] && precmd_functions+=(__term_title_prompt_command)
+        ;;
+esac
+
+# Launch it once to make sure we display the wanted title
+__term_title

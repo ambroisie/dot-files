@@ -45,9 +45,6 @@ if { [ -n "$BASH_VERSION" ] && shopt -q login_shell; } ||
 
     # Use my preferred pager settings for bat
     export BAT_PAGER="$PAGER $LESS"
-
-    # Fix terminal title which uses HOSTNAME instead of HOST
-    export HOSTNAME="$HOST"
 fi
 
 # Use keychain to handle ssh-agent, in interactive shell too

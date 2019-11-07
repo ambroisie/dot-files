@@ -6,14 +6,8 @@
 [[ $- != *i* ]] && return
 
 # Export our directory to Termite for opening new terminals
-if { [[ "$TERM" == xterm-termite ]] || [[ "$TERM" == xterm ]]; } &&
-    [ -r /etc/profile.d/vte.sh ]; then
-    if [[ "$TERM" == xterm ]]; then # FIXME: hack to make Xterm work
-        VTE_VERSION="${VTE_VERSION:-3405}"
-    fi
-
-    . /etc/profile.d/vte.sh
-    __vte_prompt_command
+if { [[ "$TERM" == xterm-termite ]] || [[ "$TERM" == xterm ]]; }; then
+    source ~/.scripts/term-title
 fi
 
 # Make colorcoding available for everyone
