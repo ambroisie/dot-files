@@ -238,9 +238,10 @@ mode "$mode_shutdown" {
         bindsym r exec --no-startup-id i3exit reboot, mode "default"
 
         bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
-        # Exit system mode: "Enter" or "Escape"
+        # Exit system mode: "Enter" or "Escape" or $mod+'0'
         bindsym Return mode "default"
         bindsym Escape mode "default"
+        bindcode $mod+19 mode "default"
 }
 
 # Bind it to the Meta + '0' key
@@ -254,9 +255,10 @@ mode "$mode_background" {
         bindsym h exec --no-startup-id set-background horizontal, mode "default"
         bindsym s exec --no-startup-id set-background single, mode "default"
 
-        # Exit background mode: "Enter" or "Escape"
+        # Exit background mode: "Enter" or "Escape" or $mod+b
         bindsym Return mode "default"
         bindsym Escape mode "default"
+        bindsym $mod+b mode "default"
 }
 
 bindsym $mod+b mode "$mode_background"
