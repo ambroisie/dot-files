@@ -1,6 +1,3 @@
-[core]
-    excludesfile = ~/.gitignore
-
 [user]
     email = bruno.belanyi@epita.fr
     name = Bruno BELANYI
