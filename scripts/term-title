@@ -36,7 +36,7 @@ __term_title_prompt_command() {
 
 case "$TERM" in
     xterm*|term_title*)
-        [ -n "$BASH_VERSION" ] && PROMPT_COMMAND="__term_title_prompt_command;$PROMPT_COMMAND"
+        [ -n "$BASH_VERSION" ] && PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND; }__term_title_prompt_command"
         [ -n "$ZSH_VERSION"  ] && precmd_functions+=(__term_title_prompt_command)
         ;;
 esac

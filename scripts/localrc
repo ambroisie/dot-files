@@ -110,7 +110,7 @@ function __source_localrc_files() {
 # Execute this command every time
 if [ -n "$BASH_VERSION" ]; then
     [ -n "${DEBUG_LOCALRC+set}" ] && echo "Loaded Bash"
-    PROMPT_COMMAND="__source_localrc_files; $PROMPT_COMMAND"
+    PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND; }__source_localrc_files"
 elif [ -n "$ZSH_VERSION" ]; then
     [ -n "${DEBUG_LOCALRC+set}" ] && echo "Loaded Zsh"
     precmd_functions+=( __source_localrc_files)
