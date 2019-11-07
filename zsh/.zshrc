@@ -1,5 +1,5 @@
 # Export our directory to Termite for opening new terminals
-if { [[ "$TERM" == xterm-termite ]] || [[ "$TERM" == xterm ]]; }; then
+if { [[ "$TERM" =~ xterm.* ]]; }; then
     source ~/.scripts/term-title
 fi
 
