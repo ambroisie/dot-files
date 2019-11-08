@@ -121,27 +121,39 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 
+# Define code for numeric keys
+set $one 10
+set $two 11
+set $three 12
+set $four 13
+set $five 14
+set $six 15
+set $seven 16
+set $eight 17
+set $nine 18
+set $zero 19
+
 # Switch to workspace
-bindcode $mod+10 workspace number $ws1
-bindcode $mod+11 workspace number $ws2
-bindcode $mod+12 workspace number $ws3
-bindcode $mod+13 workspace number $ws4
-bindcode $mod+14 workspace number $ws5
-bindcode $mod+15 workspace number $ws6
-bindcode $mod+16 workspace number $ws7
-bindcode $mod+17 workspace number $ws8
-bindcode $mod+18 workspace number $ws9
+bindcode $mod+$one workspace number $ws1
+bindcode $mod+$two workspace number $ws2
+bindcode $mod+$three workspace number $ws3
+bindcode $mod+$four workspace number $ws4
+bindcode $mod+$five workspace number $ws5
+bindcode $mod+$six workspace number $ws6
+bindcode $mod+$seven workspace number $ws7
+bindcode $mod+$eight workspace number $ws8
+bindcode $mod+$nine workspace number $ws9
 
 # Move focused container to workspace
-bindcode $mod+Shift+10 move container to workspace number $ws1
-bindcode $mod+Shift+11 move container to workspace number $ws2
-bindcode $mod+Shift+12 move container to workspace number $ws3
-bindcode $mod+Shift+13 move container to workspace number $ws4
-bindcode $mod+Shift+14 move container to workspace number $ws5
-bindcode $mod+Shift+15 move container to workspace number $ws6
-bindcode $mod+Shift+16 move container to workspace number $ws7
-bindcode $mod+Shift+17 move container to workspace number $ws8
-bindcode $mod+Shift+18 move container to workspace number $ws9
+bindcode $mod+Shift+$one move container to workspace number $ws1
+bindcode $mod+Shift+$two move container to workspace number $ws2
+bindcode $mod+Shift+$three move container to workspace number $ws3
+bindcode $mod+Shift+$four move container to workspace number $ws4
+bindcode $mod+Shift+$five move container to workspace number $ws5
+bindcode $mod+Shift+$six move container to workspace number $ws6
+bindcode $mod+Shift+$seven move container to workspace number $ws7
+bindcode $mod+Shift+$eight move container to workspace number $ws8
+bindcode $mod+Shift+$nine move container to workspace number $ws9
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
@@ -241,11 +253,11 @@ mode "$mode_shutdown" {
         # Exit system mode: "Enter" or "Escape" or $mod+'0'
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindcode $mod+19 mode "default"
+        bindcode $mod+$zero mode "default"
 }
 
 # Bind it to the Meta + '0' key
-bindcode $mod+19 mode "$mode_shutdown"
+bindcode $mod+$zero mode "$mode_shutdown"
 
 # Set second display background according to orientation, or none
 set $mode_background (v)ertical layout, (h)orizontal layout, (s)ingle layout
