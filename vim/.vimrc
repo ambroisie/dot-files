@@ -1,5 +1,3 @@
-" FIXME: put all this in .vim folder and import them on a per-file basis
-
 " Basic configuraion {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Don't try to be compatible with Vi
@@ -165,6 +163,12 @@ set listchars=tab:>─,trail:·,nbsp:¤
 
 " Timeout quickly on shortcuts, I can't wait two seconds to delete in visual
 set timeoutlen=500
+
+" Set dark mode by default
+set background=dark
+
+" Use gruvbox
+colorscheme gruvbox
 " }}}
 
 " Search parameters {{{
@@ -175,155 +179,6 @@ set hlsearch
 set ignorecase
 " Ignore case unless there is an uppercase letter in the pattern
 set smartcase
-" }}}
-
-" Plugin parameters {{{
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" BetterWhitespace settings {{{
-"""""""""""""""""""""""""""
-" Enable trailing whitespace high-lighting
-let g:better_whitespace_enabled=1
-" Strip trailing whitespace on file-save
-let g:strip_whitespace_on_save=1
-" }}}
-
-" Theme settings {{{
-""""""""""""""""
-" Use a slightly darker background color to differentiate with the status line
-let g:jellybeans_background_color_256='232'
-" colorscheme jellybeans
-" colorscheme jellybeans
-
-" Set dark mode by default
-set background=dark
-let g:gruvbox_contrast_dark='(hard)'
-" Enable italics because urxvt supports them
-let g:gruvbox_italic=1
-colorscheme gruvbox
-" }}}
-
-" Lightline settings {{{
-""""""""""""""""""""
-let g:lightline={}
-" Use the gruvbox colorscheme
-let g:lightline.colorscheme='wombat'
-let g:lightline.active={
-  \     'left': [
-  \         [ 'mode', 'paste' ],
-  \         [ 'gitbranch', 'readonly', 'filename', 'modified' ],
-  \         [ 'spell' ],
-  \     ],
-  \     'right': [
-  \         [ 'lineinfo' ],
-  \         [ 'percent' ],
-  \         [ 'fileformat', 'fileencoding', 'filetype' ],
-  \         [ 'linter_check', 'linter_errors', 'linter_warn', 'linter_ok' ],
-  \         [ 'ctags_status' ],
-  \     ]
-  \ }
-let g:lightline.inactive={
-  \     'left': [
-  \         [ 'filename' ],
-  \     ],
-  \     'right': [
-  \         [ 'lineinfo' ],
-  \         [ 'percent' ],
-  \     ],
-  \ }
-let g:lightline.component_function={
-  \     'readonly': 'LightlineReadonly',
-  \     'modified': 'LightlineModified',
-  \     'gitbranch': 'LightlineFugitive',
-  \ }
-let g:lightline.component_expand={
-  \    'linter_check': 'lightline#ale#checking',
-  \    'linter_warn': 'lightline#ale#warnings',
-  \    'linter_errors': 'lightline#ale#errors',
-  \    'linter_ok': 'lightline#ale#ok',
-  \ }
-let g:lightline.component_type={
-  \   'readonly': 'error',
-  \   'linter_checking': 'left',
-  \   'linter_warn': 'warning',
-  \   'linter_errors': 'error',
-  \   'linter_ok': 'left',
-  \ }
-" Show pretty icons instead of text for linting status
-let g:lightline#ale#indicator_checking='⏳'
-let g:lightline#ale#indicator_warnings='◆'
-let g:lightline#ale#indicator_errors='✗'
-let g:lightline#ale#indicator_ok='✓'
-
-" Lightline function wrappers {{{
-"""""""""""""""""""""""""""""
-" Show a lock icon when editing a read-only file when it makes sense
-function! LightlineReadonly()
-    return &ft!~?'help\|vimfiler\|netrw' && &readonly ? '' : ''
-endfunction
-" Show a '+' when the buffer is modified, '-' if not, when it makes sense
-function! LightlineModified()
-    return &ft=~'help\|vimfiler\|netrw' ? '' : &modified ? '+' : &modifiable ? '' : '-'
-endfunction
-" Show branch name with nice icon in status line, when it makes sense
-function! LightlineFugitive()
-    if &ft!~?'help\|vimfiler\|netrw' && exists('*fugitive#head')
-            let branch=fugitive#head()
-            return branch!=#'' ? ' '.branch : ''
-    endif
-    return ''
-endfunction
-" }}}
-" }}}
-
-" UltiSnips settings {{{
-""""""""""""""""""""
-" Insert mode trigger for expansion
-let g:UltiSnipsExpandTrigger="<Tab>"
-" Jump forward and backwards in place-holder list with Ctrl-f and Ctrl-b
-let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
-let g:UltiSnipsJumpForwardTrigger="<Tab>"
-" Split the windowd vertically when callin :UltiSnipsEdits
-let g:UltiSnipsEditSplit="vertical"
-" Store my personal snippets under ~/.vim/UltiSnips
-let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
-" }}}
-
-" ALE settings {{{
-""""""""""""""
-" Always display the sign column to avoid moving the buffer all the time
-let g:ale_sign_column_always=1
-" Change the way ALE display messages
-let g:ale_echo_msg_info_str='I'
-let g:ale_echo_msg_warning_str='W'
-let g:ale_echo_msg_error_str='E'
-" The message displayed in the command line area
-let g:ale_echo_msg_format='[%linter%][%severity%]%(code):% %s'
-" The message displayed in the location list
-let g:ale_loclist_msg_format='[%linter%]%(code):% %s'
-
-" Linter timings {{{
-""""""""""""""""
-" Don't lint every time I change the buffer
-let g:ale_lint_on_text_changed=0
-" Don't lint on leaving insert mode
-let g:ale_lint_on_insert_leave=0
-" Don't lint on entering a buffer
-let g:ale_lint_on_enter=0
-" Lint on save
-let g:ale_lint_on_save=1
-" Lint on changing the filetype
-let g:ale_lint_on_filetype_changed=1
-" }}}
-" }}}
-
-" FastFold settings {{{
-"""""""""""""""""""
-" Intercept all fold commands
-let g:fastfold_fold_command_suffixes=[
-  \     'x', 'X', 'a', 'A', 'o', 'O', 'c', 'C',
-  \     'r', 'R', 'm', 'M', 'i', 'n', 'N'
-  \ ]
-" }}}
 " }}}
 
 " Import settings when inside a git repository {{{
