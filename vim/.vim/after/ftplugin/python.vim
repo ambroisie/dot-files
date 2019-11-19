@@ -31,6 +31,10 @@ let b:undo_ftplugin.='|unlet b:ale_python_mypy_ignore_invalid_syntax'
 let b:ale_python_mypy_auto_pipenv=1
 let b:undo_ftplugin.='|unlet b:ale_python_mypy_auto_pipenv'
 
+" Automatically format files when saving them
+let b:ale_fix_on_save=1
+let b:undo_ftplugin='|unlet b:ale_lint_on_save'
+
 " Change max length of a line to 88 for this buffer to match black's settings
 setlocal colorcolumn=88
 let b:undo_ftplugin.='|setlocal colorcolumn<'
