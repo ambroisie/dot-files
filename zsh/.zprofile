@@ -1,2 +1,2 @@
 # Avoid duplication
-source .profile
+source ~/.profile
