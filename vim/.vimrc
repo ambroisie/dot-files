@@ -161,6 +161,9 @@ set list
 " Show a tab as an arrow, trailing spaces as ¤, non-breaking spaces as dots
 set listchars=tab:>─,trail:·,nbsp:¤
 
+" Don't redraw when executing macros
+set lazyredraw
+
 " Timeout quickly on shortcuts, I can't wait two seconds to delete in visual
 set timeoutlen=500
 
