@@ -56,6 +56,14 @@ call plug#begin('~/.vim/plugged')
 Plug 'nanotech/jellybeans.vim'
 " Another nice dark theme
 Plug 'morhetz/gruvbox'
+" Yet another nice dark theme
+Plug 'jonathanfilip/vim-lucius'
+" More dark colorschemes
+Plug 'joshdick/onedark.vim'
+" And even more
+Plug 'rakr/vim-one'
+" And another one
+Plug 'junegunn/seoul256.vim'
 " Fancy status bar
 Plug 'itchyny/lightline.vim'
 " }}}
@@ -170,8 +178,8 @@ set timeoutlen=500
 " Set dark mode by default
 set background=dark
 
-" Use gruvbox
-colorscheme gruvbox
+" Use onedark
+colorscheme onedark
 " }}}
 
 " Search parameters {{{

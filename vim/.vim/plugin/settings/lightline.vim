@@ -2,7 +2,7 @@
 let g:lightline={}
 
 " Use the wombat colorscheme
-let g:lightline.colorscheme='wombat'
+let g:lightline.colorscheme='onedark'
 
 " Status-line for active buffer
 let g:lightline.active={
