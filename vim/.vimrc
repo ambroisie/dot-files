@@ -23,7 +23,7 @@ filetype plugin indent on
 set expandtab
 " Indent and align to 4 spaces by default
 set shiftwidth=4
-" -1 means the same as shitwidth
+" -1 means the same as shiftwidth
 set softtabstop=-1
 " Always indent by multiples of shiftwidth
 set shiftround
