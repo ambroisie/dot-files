@@ -56,7 +56,6 @@ VISUAL_DEPENDENCIES := \
 	aur/networkmanager-dmenu-git \
 	aur/spotify \
 	community/dunst \
-	community/firefox-tridactyl \
 	community/playerctl \
 	community/redshift \
 	community/xautolock \
