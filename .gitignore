@@ -4,3 +4,5 @@ vim/.vim/autoload/plug.vim*
 vim/.vim/plugged/
 vim/.vim/spell/
 vim/.vim/view/
+# Miscellaneous desktop files
+desktop/
