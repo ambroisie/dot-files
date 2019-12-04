@@ -1,6 +1,7 @@
 CLI_PACKAGES := \
 	bash \
 	flake8 \
+	gdb \
 	git \
 	isort \
 	ranger \
