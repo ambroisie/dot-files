@@ -10,8 +10,8 @@ SAVEHIST=10000
 
 # Allow for command substitution in PS1 to have a common prompt with bash
 setopt promptsubst
-# Append to history to avoid losing commands when multiple shells are open
-setopt appendhistory
+# Append incrementally to the history and reload it whenever used
+setopt share_history
 # Show an error when a globbing expansion doesn't find any match
 setopt nomatch
 # List on ambiguous completion and Insert first match immediately
