@@ -4,6 +4,7 @@ CLI_PACKAGES := \
 	gdb \
 	git \
 	isort \
+	mypy \
 	ranger \
 	scripts \
 	shell \
@@ -33,6 +34,7 @@ CLI_DEPENDENCIES := \
 	community/git-lfs \
 	community/lesspipe \
 	community/mosh \
+	community/mypy \
 	community/pandoc \
 	community/shellcheck \
 	community/shfmt \

@@ -1,0 +1,3 @@
+[mypy]
+# Set the default directory to put the increment cache info
+cache_dir = ~/.cache/mypy
