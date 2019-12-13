@@ -57,10 +57,12 @@ VISUAL_DEPENDENCIES := \
 	aur/i3blocks-contrib-git \
 	aur/networkmanager-dmenu-git \
 	aur/spotify \
+	community/acpi \
 	community/dunst \
 	community/i3lock-color \
 	community/playerctl \
 	community/redshift \
+	community/sysstat \
 	community/termite \
 	community/xautolock \
 	community/xsel \
