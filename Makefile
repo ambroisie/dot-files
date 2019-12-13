@@ -58,6 +58,7 @@ VISUAL_DEPENDENCIES := \
 	aur/networkmanager-dmenu-git \
 	aur/spotify \
 	community/dunst \
+	community/i3lock-color \
 	community/playerctl \
 	community/redshift \
 	community/termite \
