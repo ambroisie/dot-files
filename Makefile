@@ -60,6 +60,7 @@ VISUAL_DEPENDENCIES := \
 	community/dunst \
 	community/playerctl \
 	community/redshift \
+	community/termite \
 	community/xautolock \
 	community/xsel \
 	community/zathura \
