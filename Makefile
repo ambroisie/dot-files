@@ -56,6 +56,7 @@ VISUAL_DEPENDENCIES := \
 	aur/i3-battery-popup-git \
 	aur/i3blocks-contrib-git \
 	aur/networkmanager-dmenu-git \
+	aur/rofi-dmenu \
 	aur/spotify \
 	community/acpi \
 	community/dunst \
