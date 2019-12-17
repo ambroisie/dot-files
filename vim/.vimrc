@@ -96,6 +96,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'rust-lang/rust.vim'
 " A better GNU Info reader than info
 Plug 'HiPhish/info.vim', { 'on': 'Info' }
+" Nix configuration files
+Plug 'LnL7/vim-nix'
 " }}}
 
 " Vim facilities enhancement {{{
