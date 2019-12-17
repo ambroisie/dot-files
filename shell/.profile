@@ -48,7 +48,7 @@ if { [ -n "$BASH_VERSION" ] && shopt -q login_shell; } ||
 fi
 
 # Use keychain to handle ssh-agent, in interactive shell too
-eval "$(keychain --eval id_rsa --eval id_ed25519 --quiet)"
+eval "$(keychain --eval id_rsa --eval shared_rsa --quiet)"
 
 # Use my localrc script to automatically source/unsource local configurations
 source ~/.scripts/localrc
