@@ -107,6 +107,9 @@ install-visual-deps:
 	yay -S $(VISUAL_DEPENDENCIES)
 
 # Linking packages
+.PHONY: link-all
+link-all: link-cli link-visual
+
 .PHONY: link-cli
 link-cli: $(addprefix stow-,$(CLI_PACKAGES))
 
