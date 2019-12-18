@@ -1,3 +1,36 @@
 [mypy]
 # Set the default directory to put the increment cache info
 cache_dir = ~/.cache/mypy
+
+# Perform type checking on the bodies of untyped functions
+check_untyped_defs = True
+# Disallow usage of generic types that do not specify explicit type parrameters
+disallow_any_generics = True
+# Disallow calling functions without type annotations inside typed functions
+disallow_untyped_calls = True
+# Disallow defining functions with incomplete type annotations
+disallow_incomplete_defs = True
+# Disallow decorating a typed function with an untyped decorator
+disallow_untyped_decorators = True
+# Do not ignore non-fatal errors
+ignore_errors = False
+# Do not ignore errors about modules that cannot be imported
+ignore_missing_imports = False
+# Treat imported values inside a module as implicitly exported
+implicit_reexport = True
+# Do not treat `None` as compatible with every type
+strict_optional = True
+# Treat arguments with the default value of `None` as implicitly `Optional`
+no_implicit_optional = True
+# Disallow equality/identity/container checks between non-overlapping types
+strict_equality = True
+# Warn about unneeded `# type: ignore` comments
+warn_unused_ignores = True
+# Warn about casting an expression to its deduced type
+warn_redundant_casts = True
+# Warn about configuration options that were not used by Mypy (catch typos...)
+warn_unused_configs = True
+# Warn about code that is unreachable or redundant after type analysis
+warn_unreachable = True
+# Warn about execution paths missing a return statement
+warn_no_return = True
