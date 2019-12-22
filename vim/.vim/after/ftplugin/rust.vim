@@ -16,3 +16,7 @@ let b:undo_ftplugin='|unlet! b:ale_rust_cargo_use_clippy'
 " Use rustfmt as ALE fixer for rust
 let b:ale_fixers=[ 'rustfmt' ]
 let b:undo_ftplugin.='|unlet! b:ale_fixers'
+
+" Automatically format files when saving them
+let b:ale_fix_on_save=1
+let b:undo_ftplugin='|unlet! b:ale_lint_on_save'
