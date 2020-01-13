@@ -276,6 +276,21 @@ mode "$mode_background" {
 bindsym $mod+b mode "$mode_background"
 
 
+# Enable or disable xautolock permanently
+set $mode_xautolock (e)nable (d)isable Xautolock
+
+mode "$mode_xautolock" {
+        bindsym e exec --no-startup-id xautolock -enable, mode "default"
+        bindsym d exec --no-startup-id xautolock -disable, mode "default"
+
+        # Exit xautolock mode: "Enter" or "Escape" or $mod+x
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+x mode "default"
+}
+
+bindsym $mod+x mode "$mode_xautolock"
+
 # Display indicators for caps-lock and num-lock
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 #bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
