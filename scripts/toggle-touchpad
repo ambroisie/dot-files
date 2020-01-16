@@ -4,10 +4,12 @@
 device=11
 state=$(xinput list-props "$device" | grep "Device Enabled" | grep -o "[01]$")
 
-if [ "$state" == "1" ];then
+if [ "$state" = "1" ];then
   xinput --disable "$device"
-  notify-send -t 500 -u low "Toggled touchpad (disabled)"
+  notify-send -u low "Toggled touchpad (disabled)" \
+      -h string:x-canonical-private-synchronous:touchpad # Override previous one
 else
   xinput --enable "$device"
-  notify-send -t 500 -u low "Toggled touchpad (enabled)"
+  notify-send -u low "Toggled touchpad (enabled)" \
+      -h string:x-canonical-private-synchronous:touchpad # Override previous one
 fi
