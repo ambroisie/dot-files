@@ -110,6 +110,10 @@ Plug 'romainl/vim-qf'
 Plug 'Konfekt/FastFold'
 " A nice little cheat-sheet
 Plug 'lifepillar/vim-cheat40'
+" UNIX integration
+Plug 'tpope/vim-eunuch'
+" Readline mappings
+Plug 'tpope/vim-rsi'
 " }}}
 
 " Mappings {{{
