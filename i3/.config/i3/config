@@ -280,8 +280,8 @@ bindsym $mod+b mode "$mode_background"
 set $mode_xautolock (e)nable (d)isable Xautolock
 
 mode "$mode_xautolock" {
-        bindsym e exec --no-startup-id xautolock -enable, mode "default"
-        bindsym d exec --no-startup-id xautolock -disable, mode "default"
+        bindsym e exec --no-startup-id toggle-xautolock enable, mode "default"
+        bindsym d exec --no-startup-id toggle-xautolock disable, mode "default"
 
         # Exit xautolock mode: "Enter" or "Escape" or $mod+x
         bindsym Return mode "default"
