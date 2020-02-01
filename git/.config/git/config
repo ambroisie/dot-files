@@ -1,78 +1,78 @@
 [user]
-    email = bruno.belanyi@epita.fr
-    name = Bruno BELANYI
+	email = bruno.belanyi@epita.fr
+	name = Bruno BELANYI
 
 [blame]
-    coloring = repeatedLines
-    markUnblamables = true
-    markIgnoredLines = true
+	coloring = repeatedLines
+	markUnblamables = true
+	markIgnoredLines = true
 
 [branch]
-    autosetubrebase = always
+	autosetubrebase = always
 
 [color]
-    ui = auto
-    branch = auto
-    diff = auto
-    interactive = auto
-    status = auto
+	ui = auto
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
 
 [color "diff"]
-    commit = yellow
-    meta = yellow
-    frag = cyan
-    old = red
-    new = green
-    whitespace = red reverse
+	commit = yellow
+	meta = yellow
+	frag = cyan
+	old = red
+	new = green
+	whitespace = red reverse
 
 [color "diff-highlight"]
-    oldNormal = red bold
-    oldHighlight = red bold 52
-    newNormal = green bold
-    newhighlight = green bold 22
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newhighlight = green bold 22
 
 [commit]
-    verbose = true
+	verbose = true
 
 [diff]
-    algorithm = patience
+	algorithm = patience
 
 [merge]
-    tool = fugitive
+	tool = fugitive
 
 [mergetool "fugitive"]
-    cmd = vim -f -c \"Gdiff!\" \"$MERGED\"
-    trustExitCode = true
+	cmd = vim -f -c \"Gdiff!\" \"$MERGED\"
+	trustExitCode = true
 
 [pager]
-    diff = /usr/share/git/diff-highlight/diff-highlight | less
-    log = /usr/share/git/diff-highlight/diff-highlight | less
-    show = /usr/share/git/diff-highlight/diff-highlight | less
+	diff = /usr/share/git/diff-highlight/diff-highlight | less
+	log = /usr/share/git/diff-highlight/diff-highlight | less
+	show = /usr/share/git/diff-highlight/diff-highlight | less
 
 [pull]
-    rebase = true
+	rebase = true
 
 [push]
-    default = simple
+	default = simple
 
 [rebase]
-    autoSquash = true
-    autoStash = true
+	autoSquash = true
+	autoStash = true
 
 [alias]
-    lol = log --graph --decorate --pretty=oneline --abbrev-commit
-    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-    trim = reflog expire --expire-unreachable=now --all
-    chop = gc --prune=now
-    optimize = repack -a -d -f --depth=250 --window=250
-    pf = pull --ff-only
-    m4 = mergetool -t vimdiff
-    assume = update-index --assume-unchanged
-    unassume = update-index --no-assume-unchanged
-    assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	trim = reflog expire --expire-unreachable=now --all
+	chop = gc --prune=now
+	optimize = repack -a -d -f --depth=250 --window=250
+	pf = pull --ff-only
+	m4 = mergetool -t vimdiff
+	assume = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
 
 [filter "lfs"]
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
-    process = git-lfs filter-process
-    required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
