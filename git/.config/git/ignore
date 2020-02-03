@@ -3,3 +3,6 @@
 *.o
 *.a
 *.out
+
+# Local scripts
+.localrc
