@@ -52,3 +52,7 @@ eval "$(keychain --eval id_rsa --eval shared_rsa --quiet)"
 
 # Use my localrc script to automatically source/unsource local configurations
 source ~/.scripts/localrc
+
+if [ -e ~/.local_profile ]; then
+    source ~/.local_profile
+fi
