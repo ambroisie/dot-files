@@ -6,3 +6,11 @@
 
 # Local scripts
 .localrc
+
+# Python files
+env/
+__pycache__/
+*.py[cod]
+.mypy_cache/
+.dmypy.json
+dmypy.json
