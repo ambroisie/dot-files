@@ -8,6 +8,7 @@ CLI_PACKAGES := \
 	ranger \
 	scripts \
 	shell \
+	tin \
 	vim \
 	zsh \
 
@@ -125,6 +126,9 @@ stow-scripts: scripts
 	mkdir -p $(STOW_TARGET)
 	$(STOW) $<
 
+stow-tin: tin
+	ln -s $(realpath tin/.tin) $(STOW_TARGET)/.tin
+
 stow-vim: vim
 	$(STOW) $<
 	vim +PlugInstall
@@ -142,6 +146,9 @@ unstow-%:
 unstow-scripts: STOW_TARGET=~/.scripts
 unstow-scripts:
 	$(STOW) -D scripts
+
+unstow-tin:
+	rm -f $(STOW_TARGET)/.tin
 
 # Development related installations
 .PHONY: rust
