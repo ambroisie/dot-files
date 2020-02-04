@@ -1,5 +1,5 @@
 ! FIXME: this line should be conditional in some way
-#include ".Xresources.d/theme/easy-dark"
+#include ".Xresources.d/theme/hund"
 
 ! XTerm settings
 
