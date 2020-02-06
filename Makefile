@@ -41,6 +41,7 @@ CLI_DEPENDENCIES := \
 	community/shfmt \
 	community/stow \
 	community/tig \
+	community/udiskie \
 	community/zsh-completions \
 	core/archlinux-keyring \
 	core/openssh \
