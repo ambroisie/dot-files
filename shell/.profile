@@ -10,7 +10,7 @@ if { [ -n "$BASH_VERSION" ] && shopt -q login_shell; } ||
     export PATH="$HOME/.cargo/bin:$PATH"
 
     # User-local bin directories
-    export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+    export PATH="$HOME/bin:$PATH"
 
     # Color ls output depending on filetype with dircolors
     [ -e "/etc/DIR_COLORS" ] && DIR_COLORS="/etc/DIR_COLORS"
