@@ -17,3 +17,6 @@ dmypy.json
 
 # Build system files
 compile_commands.json
+
+# Debugger files
+.gdb_history
