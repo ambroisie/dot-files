@@ -329,6 +329,9 @@ exec --no-startup-id xautolock -detectsleep -time 3 -cornerdelay 5 -cornerredela
 # Set the wallpaper using the last settings
 exec --no-startup-id ~/.fehbg
 
+# Set the custom key bindings using Xmodmap
+exec --no-startup-id xmodmap ~/.config/xmodmap/config
+
 # Make tridactyl-spawned editor floating by default
 for_window [class="tridactyl_editor"] floating enable border pixel 1
 # Make blueman windows floating by default
