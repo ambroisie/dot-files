@@ -20,3 +20,7 @@ let b:undo_ftplugin.='|unlet! b:ale_fixers'
 " Automatically format files when saving them
 let b:ale_fix_on_save=1
 let b:undo_ftplugin='|unlet! b:ale_lint_on_save'
+
+" Change max length of a line to 99 for this buffer to match official guidelines
+setlocal colorcolumn=99
+let b:undo_ftplugin.='|setlocal colorcolumn<'
