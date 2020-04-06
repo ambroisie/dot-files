@@ -24,3 +24,7 @@ let b:undo_ftplugin.='|unlet! b:ale_haskell_ghc_options'
 " Automatically format files when saving them
 let b:ale_fix_on_save=1
 let b:undo_ftplugin='|unlet! b:ale_lint_on_save'
+
+" Change max length of a line to 100 for this buffer to match official guidelines
+setlocal colorcolumn=100
+let b:undo_ftplugin.='|setlocal colorcolumn<'
