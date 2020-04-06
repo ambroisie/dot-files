@@ -17,6 +17,10 @@ let b:undo_ftplugin.='|unlet! b:ale_haskell_hlint_executable'
 let b:ale_haskell_brittany_executable='stack'
 let b:undo_ftplugin.='|unlet! b:ale_haskell_brittany_executable'
 
+" Use dynamic libraries because of Arch linux, with default ALE options
+let b:ale_haskell_ghc_options='--dynamic -fno-code -v0'
+let b:undo_ftplugin.='|unlet! b:ale_haskell_ghc_options'
+
 " Automatically format files when saving them
 let b:ale_fix_on_save=1
 let b:undo_ftplugin='|unlet! b:ale_lint_on_save'
