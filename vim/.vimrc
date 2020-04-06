@@ -98,6 +98,8 @@ Plug 'rust-lang/rust.vim'
 Plug 'HiPhish/info.vim', { 'on': 'Info' }
 " Nix configuration files
 Plug 'LnL7/vim-nix'
+" TOML files
+Plug 'cespare/vim-toml'
 " }}}
 
 " Vim facilities enhancement {{{
