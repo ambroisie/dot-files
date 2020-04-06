@@ -39,6 +39,7 @@ CLI_DEPENDENCIES := \
 	community/pandoc \
 	community/shellcheck \
 	community/shfmt \
+	community/stack \
 	community/stow \
 	community/tig \
 	community/udiskie \
@@ -83,6 +84,10 @@ RUST_DEPENDENCIES := \
 	clippy \
 	rustfmt \
 
+HASKELL_DEPENDENCIES := \
+	brittany \
+	hlint \
+
 STOW_TARGET := $(HOME)
 STOW = stow -t $(STOW_TARGET) -R -v
 
@@ -93,7 +98,7 @@ all: install
 .PHONY: install-cli
 install-cli: install-cli-deps
 install-cli: link-cli
-install-cli: rust
+install-cli: rust haskell
 
 .PHONY: install
 install: install-cli
@@ -156,3 +161,7 @@ unstow-tin:
 rust:
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 	rustup component add $(RUST_DEPENDENCIES)
+
+.PHONY: haskell
+haskell:
+	stack build --copy-compiler-tool $(HASKELL_DEPENDENCIES)
