@@ -45,6 +45,9 @@ if { [ -n "$BASH_VERSION" ] && shopt -q login_shell; } ||
 
     # Use my preferred pager settings for bat
     export BAT_PAGER="$PAGER $LESS"
+
+    # Use this path for `remind` calendar
+    export DOTREMINDERS="$HOME/.config/remind/reminders.rem"
 fi
 
 # Use keychain to handle ssh-agent, in interactive shell too
