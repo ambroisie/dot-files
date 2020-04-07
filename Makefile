@@ -3,6 +3,7 @@ CLI_PACKAGES := \
 	flake8 \
 	gdb \
 	git \
+	haskell \
 	isort \
 	mypy \
 	ranger \
