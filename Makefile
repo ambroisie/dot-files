@@ -7,6 +7,7 @@ CLI_PACKAGES := \
 	isort \
 	mypy \
 	ranger \
+	remind \
 	scripts \
 	shell \
 	tin \
