@@ -66,6 +66,8 @@ Plug 'rakr/vim-one'
 Plug 'junegunn/seoul256.vim'
 " Fancy status bar
 Plug 'itchyny/lightline.vim'
+" Simplistic dark theme
+Plug 'axvr/photon.vim'
 " }}}
 
 " Minimum viable vim config {{{
