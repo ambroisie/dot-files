@@ -16,5 +16,14 @@ install-yay() {
     popd || exit 1
 }
 
+# Keyboard and language setup
+setup-lang() {
+    # A good QWERTY keyboard with easy access to accents
+    sudo localectl set-x11-keymap fr pc105 us
+    # FIXME: no international keyboard in VC for now
+    sudo localectl set-keymap --no-convert us
+}
+
 prerequisite
 install-yay
+setup-lang
