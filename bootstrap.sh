@@ -5,7 +5,7 @@ set -e
 
 # Install pre-requisite packages for installing packages and connecting
 prerequisite() {
-    sudo pacman -S base base-devel git stow mosh
+    sudo pacman -S base base-devel git stow mosh jq
 }
 
 # Install the yay AUR helper
@@ -24,6 +24,44 @@ setup-lang() {
     sudo localectl set-keymap --no-convert us
 }
 
+get-doc() {
+    # $1: name of folder which contains the wanted document
+    # $2: name of the document
+    # $3: destination
+    # $4: permissions
+
+    local FOLDER_ID
+    local NOTES
+    FOLDER_ID="$(bw list folders |
+        jq '.[] | select(.name == "'"$1"'") | .id' |
+        cut -d'"' -f2)"
+
+    NOTES="$(bw list items --folderid "$FOLDER_ID" |
+        jq '.[] | select(.name == "'"$2"'") | .notes' |
+        cut -d'"' -f2)"
+
+    printf "%b" "$NOTES" > "$3"
+    chmod "$4" "$3"
+}
+
+get-ssh() {
+    mkdir -p "$HOME/.ssh"
+    chmod 700 "$HOME/.ssh"
+
+    get-doc "SysAdmin/SSH" "shared-key-public" "$HOME/.ssh/shared_rsa.pub" 644
+    get-doc "SysAdmin/SSH" "shared-key-private" "$HOME/.ssh/shared_rsa" 600
+}
+
+get-creds() {
+    if [ -z ${BW_SESSION-set} ]; then
+        BW_SESSION="$(bw login --raw)"
+        export BW_SESSION
+    fi
+
+    get-ssh
+}
+
 prerequisite
 install-yay
 setup-lang
+get-creds
