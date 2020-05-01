@@ -10,6 +10,7 @@ CLI_PACKAGES := \
 	remind \
 	scripts \
 	shell \
+	ssh \
 	tin \
 	vim \
 	zsh \
