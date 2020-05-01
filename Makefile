@@ -135,6 +135,7 @@ stow-scripts: scripts
 	$(STOW) $<
 
 stow-tin: tin
+	rm -rf $(STOW_TARGET)/.tin
 	ln -s $(realpath tin/.tin) $(STOW_TARGET)/.tin
 
 stow-vim: vim
