@@ -56,6 +56,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'nanotech/jellybeans.vim'
 " Another nice dark theme
 Plug 'morhetz/gruvbox'
+" Simpler gruvbox
+Plug 'lifepillar/vim-gruvbox8'
 " Yet another nice dark theme
 Plug 'jonathanfilip/vim-lucius'
 " More dark colorschemes
@@ -68,6 +70,8 @@ Plug 'junegunn/seoul256.vim'
 Plug 'itchyny/lightline.vim'
 " Simplistic dark theme
 Plug 'axvr/photon.vim'
+" Another dark theme
+Plug 'haishanh/night-owl.vim'
 " }}}
 
 " Minimum viable vim config {{{
