@@ -35,11 +35,13 @@ CLI_DEPENDENCIES := \
 	aur/stdman \
 	aur/zsh-fast-syntax-highlighting-git \
 	community/bat \
+	community/fd \
 	community/git-lfs \
 	community/lesspipe \
 	community/mosh \
 	community/mypy \
 	community/pandoc \
+	community/ripgrep \
 	community/shellcheck \
 	community/shfmt \
 	community/stack \
