@@ -64,6 +64,7 @@ VISUAL_DEPENDENCIES := \
 	aur/i3-battery-popup-git \
 	aur/i3blocks-contrib-git \
 	aur/networkmanager-dmenu-git \
+	aur/qsyncthingtray \
 	aur/rofi-dmenu \
 	aur/spotify \
 	community/acpi \
@@ -71,6 +72,7 @@ VISUAL_DEPENDENCIES := \
 	community/i3lock-color \
 	community/playerctl \
 	community/redshift \
+	community/syncthing \
 	community/sysstat \
 	community/termite \
 	community/xautolock \
