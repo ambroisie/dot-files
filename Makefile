@@ -19,6 +19,7 @@ VISUAL_PACKAGES := \
 	X \
 	desktop \
 	dunst \
+	fontconfig \
 	i3 \
 	i3blocks \
 	redshift \
@@ -84,6 +85,7 @@ VISUAL_DEPENDENCIES := \
 	community/zathura-ps \
 	extra/firefox \
 	extra/nm-connection-editor \
+	extra/noto-fonts-emoji \
 	extra/thunderbird \
 	extra/vlc \
 
