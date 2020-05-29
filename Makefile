@@ -67,6 +67,7 @@ VISUAL_DEPENDENCIES := \
 	aur/networkmanager-dmenu-git \
 	aur/qsyncthingtray \
 	aur/rofi-dmenu \
+	aur/rofi-emoji \
 	aur/spotify \
 	community/acpi \
 	community/dunst \
