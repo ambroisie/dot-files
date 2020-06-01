@@ -1,0 +1,5 @@
+# EPITA identity
+[user]
+	email = bruno.belanyi@epita.fr
+	name = Bruno BELANYI
+# vim: set ft=gitconfig:

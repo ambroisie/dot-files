@@ -1,5 +1,5 @@
 [user]
-	email = bruno.belanyi@epita.fr
+	email = brunobelanyi@gmail.com
 	name = Bruno BELANYI
 
 [blame]
@@ -77,3 +77,7 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+; Use my EPITA identity for repositories that should use it
+[includeIf "gitdir:~/git/EPITA/"]
+	path = ~/.config/git/config-epita
