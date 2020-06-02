@@ -343,3 +343,5 @@ for_window [class="^Blueman-.*$"] floating enable
 for_window [title="^htop$"] floating enable
 # Make Thunderbird filter window floating by default
 for_window [class="Thunderbird" instance="Mailnews" window_role="filterlist"] floating enable
+# Make Pulse Audio Volume Control floating by default
+for_window [class="^Pavucontrol.*$"] floating enable
