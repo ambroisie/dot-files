@@ -65,15 +65,15 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # Change focused screen
-bindsym $mod+Control+$left focus output left
-bindsym $mod+Control+$down focus output down
-bindsym $mod+Control+$up focus output up
-bindsym $mod+Control+$right focus output right
+bindsym $mod+$alt+$left focus output left
+bindsym $mod+$alt+$down focus output down
+bindsym $mod+$alt+$up focus output up
+bindsym $mod+$alt+$right focus output right
 # Alternatively, you can use the cursor keys:
-bindsym $mod+Control+Left focus output left
-bindsym $mod+Control+Down focus output down
-bindsym $mod+Control+Up focus output up
-bindsym $mod+Control+Right focus output right
+bindsym $mod+$alt+Left focus output left
+bindsym $mod+$alt+Down focus output down
+bindsym $mod+$alt+Up focus output up
+bindsym $mod+$alt+Right focus output right
 
 # Change screen for a given workspace
 bindsym $mod+$alt+Control+$left move workspace to output left
@@ -98,18 +98,18 @@ bindsym $mod+$alt+Shift+Up move container to output up
 bindsym $mod+$alt+Shift+Right move container to output right
 
 # Scroll through workspaces on given screen
-bindsym $mod+$alt+$left workspace prev_on_output
-bindsym $mod+$alt+$right workspace next_on_output
+bindsym $mod+Control+$left workspace prev_on_output
+bindsym $mod+Control+$right workspace next_on_output
 # Alternatively, you can use the cursor keys:
-bindsym $mod+$alt+Left workspace prev_on_output
-bindsym $mod+$alt+Right workspace next_on_output
+bindsym $mod+Control+Left workspace prev_on_output
+bindsym $mod+Control+Right workspace next_on_output
 
 # Use scratchpad workspace
-bindsym $mod+$alt+$up move to scratchpad
-bindsym $mod+$alt+$down scratchpad show
+bindsym $mod+Control+$up move to scratchpad
+bindsym $mod+Control+$down scratchpad show
 # Alternatively, you can use the cursor keys:
-bindsym $mod+$alt+Up move to scratchpad
-bindsym $mod+$alt+Down scratchpad show
+bindsym $mod+Control+Up move to scratchpad
+bindsym $mod+Control+Down scratchpad show
 
 # Move focused window
 bindsym $mod+Shift+$left move left 10 px
