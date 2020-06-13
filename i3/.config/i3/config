@@ -65,26 +65,26 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # Change screen for a given workspace
-bindsym $mod+Control+$left move workspace to output left
-bindsym $mod+Control+$down move workspace to output down
-bindsym $mod+Control+$up move workspace to output up
-bindsym $mod+Control+$right move workspace to output right
+bindsym $mod+$alt+Control+$left move workspace to output left
+bindsym $mod+$alt+Control+$down move workspace to output down
+bindsym $mod+$alt+Control+$up move workspace to output up
+bindsym $mod+$alt+Control+$right move workspace to output right
 # Alternatively, you can use the cursor keys:
-bindsym $mod+Control+Left move workspace to output left
-bindsym $mod+Control+Down move workspace to output down
-bindsym $mod+Control+Up move workspace to output up
-bindsym $mod+Control+Right move workspace to output right
+bindsym $mod+$alt+Control+Left move workspace to output left
+bindsym $mod+$alt+Control+Down move workspace to output down
+bindsym $mod+$alt+Control+Up move workspace to output up
+bindsym $mod+$alt+Control+Right move workspace to output right
 
 # Change screen for a given window
-bindsym $mod+Control+Shift+$left move container to output left
-bindsym $mod+Control+Shift+$down move container to output down
-bindsym $mod+Control+Shift+$up move container to output up
-bindsym $mod+Control+Shift+$right move container to output right
+bindsym $mod+$alt+Shift+$left move container to output left
+bindsym $mod+$alt+Shift+$down move container to output down
+bindsym $mod+$alt+Shift+$up move container to output up
+bindsym $mod+$alt+Shift+$right move container to output right
 # Alternatively, you can use the cursor keys:
-bindsym $mod+Control+Shift+Left move container to output left
-bindsym $mod+Control+Shift+Down move container to output down
-bindsym $mod+Control+Shift+Up move container to output up
-bindsym $mod+Control+Shift+Right move container to output right
+bindsym $mod+$alt+Shift+Left move container to output left
+bindsym $mod+$alt+Shift+Down move container to output down
+bindsym $mod+$alt+Shift+Up move container to output up
+bindsym $mod+$alt+Shift+Right move container to output right
 
 # Scroll through workspaces on given screen
 bindsym $mod+$alt+$left workspace prev_on_output
