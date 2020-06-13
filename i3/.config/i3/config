@@ -93,6 +93,13 @@ bindsym $mod+$alt+$right workspace next_on_output
 bindsym $mod+$alt+Left workspace prev_on_output
 bindsym $mod+$alt+Right workspace next_on_output
 
+# Use scratchpad workspace
+bindsym $mod+$alt+$up move to scratchpad
+bindsym $mod+$alt+$down scratchpad show
+# Alternatively, you can use the cursor keys:
+bindsym $mod+$alt+Up move to scratchpad
+bindsym $mod+$alt+Down scratchpad show
+
 # Move focused window
 bindsym $mod+Shift+$left move left 10 px
 bindsym $mod+Shift+$down move down 10 px
