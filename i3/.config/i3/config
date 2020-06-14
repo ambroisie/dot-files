@@ -137,7 +137,6 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # Toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
 bindsym $mod+Control+space floating toggle
 
 # Change focus between tiling / floating windows
@@ -256,6 +255,47 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+mode "floating movement" {
+
+        # Move the window using movement keys
+        # Not holding modifiers will move by 50 px
+        # Using ctrl will move by 1 px
+        # Using shift will move by 100 px
+        bindsym $left move left 50 px
+        bindsym $down move down 50 px
+        bindsym $up move up 50 px
+        bindsym $right move right 50 px
+        bindsym Control+$left move left 1 px
+        bindsym Control+$down move down 1 px
+        bindsym Control+$up move up 1 px
+        bindsym Control+$right move right 1 px
+        bindsym Shift+$left move left 100 px
+        bindsym Shift+$down move down 100 px
+        bindsym Shift+$up move up 100 px
+        bindsym Shift+$right move right 100 px
+
+        # Same bindings, but for the arrow keys
+        bindsym Left move left 50 px
+        bindsym Down move down 50 px
+        bindsym Up move up 50 px
+        bindsym Right move right 50 px
+        bindsym Control+Left move left 1 px
+        bindsym Control+Down move down 1 px
+        bindsym Control+Up move up 1 px
+        bindsym Control+Right move right 1 px
+        bindsym Shift+Left move left 100 px
+        bindsym Shift+Down move down 100 px
+        bindsym Shift+Up move up 100 px
+        bindsym Shift+Right move right 100 px
+
+        # Back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+Shift+space mode "default"
+}
+
+bindsym $mod+Shift+space mode "floating movement"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
