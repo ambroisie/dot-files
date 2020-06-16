@@ -42,6 +42,9 @@ bindsym $mod+Shift+d exec --no-startup-id rofi -show run -disable-history
 # installed.
 bindsym $mod+d exec --no-startup-id rofi -show drun -disable-history
 
+# Launch flameshot selection tool
+bindsym $mod+p exec --no-startup-id flameshot gui
+
 # Launch bwmenu (a bitwarden integration with rofi)
 bindsym $mod+Control+p exec --no-startup-id bwmenu
 

@@ -71,6 +71,7 @@ VISUAL_DEPENDENCIES := \
 	aur/spotify \
 	community/acpi \
 	community/dunst \
+	community/flameshot \
 	community/i3lock-color \
 	community/playerctl \
 	community/redshift \
