@@ -381,6 +381,11 @@ bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -R
 bindsym Shift+XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 1%+ && pkill -RTMIN+10 i3blocks
 bindsym Shift+XF86AudioLowerVolume exec amixer -q -D pulse sset Master 1%- && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
+# Bind media control keys and signal i3blocks on update
+bindsym XF86AudioPlay exec playerctl play-pause && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioNext exec playerctl next && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioPrev exec playerctl previous && pkill -RTMIN+10 i3blocks
+
 # Bind keyboard settings key to toggle touchpad
 bindsym XF86Tools exec toggle-touchpad
 # Bind display control to launch arandr
