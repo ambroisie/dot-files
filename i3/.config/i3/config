@@ -43,7 +43,8 @@ bindsym $mod+Shift+d exec --no-startup-id rofi -show run -disable-history
 bindsym $mod+d exec --no-startup-id rofi -show drun -disable-history
 
 # Launch bwmenu (a bitwarden integration with rofi)
-bindsym $mod+p exec --no-startup-id bwmenu
+bindsym $mod+Control+p exec --no-startup-id bwmenu
+
 # Launch an emoji selector in rofi
 bindsym $mod+Shift+p exec --no-startup-id rofi -show emoji -disable-history
 
