@@ -112,4 +112,7 @@ source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.
 source ~/.zsh_prompt
 
 # Use fzf for backwards search
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /usr/share/fzf/key-bindings.zsh
+
+# Enable completions for fzf
+source /usr/share/fzf/completion.zsh

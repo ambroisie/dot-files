@@ -94,8 +94,6 @@ Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 " Show git messages in preview window
 Plug 'rhysd/git-messenger.vim'
-" Fuzzy file finder (installs zfz system-wide)
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Pre-written functions for fzf mappings
 Plug 'junegunn/fzf.vim'
 " Rust syntax, folding, compiler etc...

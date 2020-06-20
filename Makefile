@@ -37,6 +37,7 @@ CLI_DEPENDENCIES := \
 	aur/zsh-fast-syntax-highlighting-git \
 	community/bat \
 	community/fd \
+	community/fzf \
 	community/git-lfs \
 	community/lesspipe \
 	community/mosh \

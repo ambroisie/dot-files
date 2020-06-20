@@ -61,4 +61,7 @@ source ~/.profile
 source ~/.bash_prompt
 
 # Use fzf for backwards search
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+source /usr/share/fzf/key-bindings.bash
+
+# Enable fzf completion
+source /usr/share/fzf/completion.bash
