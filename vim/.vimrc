@@ -130,6 +130,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 " Some ex command mappings
 Plug 'tpope/vim-unimpaired'
+" Super-powered increment/decrement
+Plug 'tpope/vim-speeddating'
 " }}}
 
 " Snippets {{{
