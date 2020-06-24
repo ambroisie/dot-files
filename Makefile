@@ -24,6 +24,7 @@ VISUAL_PACKAGES := \
 	i3blocks \
 	redshift \
 	rofi \
+	system-X \
 	termite \
 	tridactyl \
 	wallpapers \
@@ -144,6 +145,10 @@ stow-scripts: scripts
 	mkdir -p $(STOW_TARGET)
 	$(STOW) $<
 
+stow-system-X: STOW_TARGET=/
+stow-system-X: system-X
+	sudo $(STOW) $<
+
 stow-tin: tin
 	rm -rf $(STOW_TARGET)/.tin
 	ln -s $(realpath tin/.tin) $(STOW_TARGET)/.tin
@@ -165,6 +170,10 @@ unstow-%:
 unstow-scripts: STOW_TARGET=~/.scripts
 unstow-scripts:
 	$(STOW) -D scripts
+
+unstow-system-X: STOW_TARGET=/
+unstow-system-X:
+	sudo $(STOW) -D system-X
 
 unstow-tin:
 	rm -f $(STOW_TARGET)/.tin
