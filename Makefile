@@ -33,13 +33,13 @@ VISUAL_PACKAGES := \
 CLI_DEPENDENCIES := \
 	aur/bitwarden-cli \
 	aur/cppreference \
-	aur/global \
 	aur/stdman \
 	aur/zsh-fast-syntax-highlighting-git \
 	community/bat \
 	community/fd \
 	community/fzf \
 	community/git-lfs \
+	community/global \
 	community/lesspipe \
 	community/mosh \
 	community/mypy \
