@@ -104,6 +104,8 @@ Plug 'HiPhish/info.vim', { 'on': 'Info' }
 Plug 'LnL7/vim-nix'
 " TOML files
 Plug 'cespare/vim-toml'
+" Beancount fiels
+Plug 'nathangrigg/vim-beancount'
 " }}}
 
 " Vim facilities enhancement {{{
