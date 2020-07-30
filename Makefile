@@ -6,7 +6,6 @@ CLI_PACKAGES := \
 	haskell \
 	isort \
 	mypy \
-	ranger \
 	remind \
 	scripts \
 	shell \
