@@ -106,6 +106,8 @@ Plug 'LnL7/vim-nix'
 Plug 'cespare/vim-toml'
 " Beancount fiels
 Plug 'nathangrigg/vim-beancount'
+" Jsonnet files
+Plug 'google/vim-jsonnet'
 " }}}
 
 " Vim facilities enhancement {{{
