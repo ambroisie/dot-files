@@ -10,7 +10,14 @@ case "$1" in
         ;;
 esac
 
-xautolock "-$1"
+notify() {
+    notify-send -u "${2:-low}" "$1" \
+        -h string:x-canonical-private-synchronous:xautolock-toggle # Overwrite
+}
 
-notify-send -u low "Toggled Xautolock (${1}d)" \
-    -h string:x-canonical-private-synchronous:xautolock-toggle # Override previous one
+if ! xautolock "-$1"; then
+    notify "Could not toggle Xautolock" critical
+    exit 1
+fi
+
+notify "Toggled Xautolock (${1}d)"
