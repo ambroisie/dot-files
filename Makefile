@@ -32,6 +32,7 @@ VISUAL_PACKAGES := \
 CLI_DEPENDENCIES := \
 	aur/bitwarden-cli \
 	aur/cppreference \
+	aur/git-absorb \
 	aur/stdman \
 	aur/zsh-fast-syntax-highlighting-git \
 	community/bat \
