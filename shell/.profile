@@ -48,6 +48,9 @@ if { [ -n "$BASH_VERSION" ] && shopt -q login_shell; } ||
 
     # Use this path for `remind` calendar
     export DOTREMINDERS="$HOME/.config/remind/reminders.rem"
+elif { [ -n "$BASH_VERSION" ] || [ -n "$ZSH_VERSION" ] ; } &&
+    [[ $- == *i* ]]; then # When interactive, deactivate terminal freezes
+    stty -ixon
 fi
 
 # Use keychain to handle ssh-agent, in interactive shell too
