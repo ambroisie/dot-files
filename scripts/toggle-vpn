@@ -1,0 +1,40 @@
+#!/bin/sh
+
+INTERFACE=wg0
+
+if [ "$1" = '--visual' ]; then
+    USE_X=1
+    shift
+fi
+
+case "$1" in
+    up|down)
+        ;;
+    *)
+        echo "Unkown command '$1'" >&2
+        echo "Usage: '$0 [--visual] <up|down>'" >&2
+        exit 1
+        ;;
+esac
+
+notify() {
+    if [ -n "$USE_X" ]; then
+        notify-send -u "${2:-low}" "$1" \
+            -h string:x-canonical-private-synchronous:vpn-toggle # Overwrite
+    else
+        echo "$1" >&2
+    fi
+}
+
+toggle() {
+    # Explicitely do not use quotes when expanding '-A' argument
+    SUDO_ASKPASS="${USE_X+/usr/lib/ssh/gnome-ssh-askpass3}" \
+        sudo ${USE_X+-A} wg-quick "$1" "$INTERFACE"
+}
+
+if ! toggle "$1"; then
+    notify "Could not toggle VPN" critical
+    exit 1
+fi
+
+notify "Toggled VPN (${1})"

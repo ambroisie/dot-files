@@ -64,6 +64,7 @@ CLI_DEPENDENCIES := \
 
 VISUAL_DEPENDENCIES := \
 	aur/bitwarden-rofi \
+	aur/gnome-ssh-askpass3 \
 	aur/i3-battery-popup-git \
 	aur/i3blocks-contrib-git \
 	aur/networkmanager-dmenu-git \
