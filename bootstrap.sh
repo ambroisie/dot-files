@@ -3,9 +3,28 @@
 # Exit on errors
 set -e
 
+for arg; do
+    case "$arg" in
+        --no-creds)
+            NOCREDS=1
+            ;;
+        --no-lang)
+            NOLANG=1
+            ;;
+        --no-yay)
+            NOYAY=1
+            ;;
+        *)
+            echo "Unknown option '$arg'" >&2
+            echo "Usage: $0 [--no-creds] [--no-lang] [--no-yay]" >&2
+            exit 1
+            ;;
+    esac
+done
+
 # Install pre-requisite packages for installing packages and connecting
 prerequisite() {
-    sudo pacman -S base base-devel git stow mosh jq
+    sudo pacman -S --noconfirm base base-devel git stow mosh jq
 }
 
 # Install the yay AUR helper
@@ -53,7 +72,7 @@ get-ssh() {
 }
 
 get-creds() {
-    if [ -z ${BW_SESSION-set} ]; then
+    if [ -z "${BW_SESSION-set}" ]; then
         BW_SESSION="$(bw login --raw)"
         export BW_SESSION
     fi
@@ -62,6 +81,6 @@ get-creds() {
 }
 
 prerequisite
-install-yay
-setup-lang
-get-creds
+[ -z "$NOYAY" ] && install-yay
+[ -z "$NOLANG" ] && setup-lang
+[ -z "$NOCREDS" ] && get-creds
