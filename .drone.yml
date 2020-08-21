@@ -1,0 +1,13 @@
+---
+kind: pipeline
+name: verify linking
+
+steps:
+  - name: link & unlink
+    image: archlinux
+    pull: always
+    commands:
+      - pacman -Suy --noconfirm make git stow sudo vim tmux
+      - "echo 'root ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers"
+      - make link-all
+      - make unlink-all
