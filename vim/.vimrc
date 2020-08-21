@@ -199,7 +199,7 @@ set timeoutlen=500
 set background=dark
 
 " Use onedark
-colorscheme onedark
+silent! colorscheme onedark
 " }}}
 
 " Search parameters {{{
