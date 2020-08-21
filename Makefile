@@ -140,6 +140,8 @@ link-cli: $(addprefix stow-,$(CLI_PACKAGES))
 link-visual: $(addprefix stow-,$(VISUAL_PACKAGES))
 
 # Installing configuration packages
+.PHONY: $(addprefix stow-,$(CLI_PACKAGES))
+.PHONY: $(addprefix stow-,$(VISUAL_PACKAGES))
 stow-%: %
 	$(STOW) $<
 
@@ -164,15 +166,20 @@ stow-tmux: tmux
 
 stow-vim: vim
 	$(STOW) $<
-	vim +PlugInstall
+	vim +PlugInstall +qa
 
 # Removing packages
-unlink: unlink-cli unlink-visual
+.PHONY: unlink-all
+unlink-all: unlink-cli unlink-visual
 
+.PHONY: unlink-cli
 unlink-cli: $(addprefix unstow-,$(CLI_PACKAGES))
 
+.PHONY: unlink-visual
 unlink-visual: $(addprefix unstow-,$(VISUAL_PACKAGES))
 
+.PHONY: $(addprefix unstow-,$(CLI_PACKAGES))
+.PHONY: $(addprefix unstow-,$(VISUAL_PACKAGES))
 unstow-%:
 	$(STOW) -D $*
 
