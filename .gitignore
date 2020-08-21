@@ -6,3 +6,4 @@ vim/.vim/spell/
 vim/.vim/view/
 # Miscellaneous desktop files
 desktop/
+tmux/.config/tmux/plugins

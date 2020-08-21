@@ -11,6 +11,7 @@ CLI_PACKAGES := \
 	shell \
 	ssh \
 	tin \
+	tmux \
 	vim \
 	zsh \
 
@@ -50,6 +51,7 @@ CLI_DEPENDENCIES := \
 	community/stack \
 	community/stow \
 	community/tig \
+	community/tmux \
 	community/udiskie \
 	community/zsh-completions \
 	core/archlinux-keyring \
@@ -154,6 +156,12 @@ stow-tin: tin
 	rm -rf $(STOW_TARGET)/.tin
 	ln -s $(realpath tin/.tin) $(STOW_TARGET)/.tin
 
+stow-tmux: tmux
+	$(STOW) $<
+	[ -d ~/.config/tmux/plugins/tpm ] || \
+	    git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm;
+	    ~/.config/tmux/plugins/tpm/bin/install_plugins
+
 stow-vim: vim
 	$(STOW) $<
 	vim +PlugInstall
@@ -178,6 +186,10 @@ unstow-system-X:
 
 unstow-tin:
 	rm -f $(STOW_TARGET)/.tin
+
+unstow-tmux:
+	$(STOW) -D tmux
+	rm -rf ~/.config/tmux/plugins/
 
 # Development related installations
 .PHONY: rust
