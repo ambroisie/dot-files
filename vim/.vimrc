@@ -108,6 +108,8 @@ Plug 'cespare/vim-toml'
 Plug 'nathangrigg/vim-beancount'
 " Jsonnet files
 Plug 'google/vim-jsonnet'
+" Tmux configuration file
+Plug 'tmux-plugins/vim-tmux'
 " }}}
 
 " Vim facilities enhancement {{{
