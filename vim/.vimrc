@@ -126,6 +126,8 @@ Plug 'lifepillar/vim-cheat40'
 Plug 'tpope/vim-eunuch'
 " Readline mappings
 Plug 'tpope/vim-rsi'
+" Vifm configuration file, and file browsing facilities
+Plug 'vifm/vifm.vim'
 " }}}
 
 " Mappings {{{
