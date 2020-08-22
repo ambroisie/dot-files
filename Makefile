@@ -111,7 +111,7 @@ HASKELL_DEPENDENCIES := \
 STOW_TARGET := $(HOME)
 STOW = stow -t $(STOW_TARGET) -R -v
 
-YAY := yay -S --noconfirm
+YAY := yay -S --noconfirm --needed
 
 .PHONY: all
 all: install

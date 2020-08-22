@@ -24,7 +24,7 @@ done
 
 # Install pre-requisite packages for installing packages and connecting
 prerequisite() {
-    sudo pacman -Syu --noconfirm base base-devel git stow mosh jq
+    sudo pacman -Syu --noconfirm --needed base base-devel git stow mosh jq
 }
 
 # Install the yay AUR helper
