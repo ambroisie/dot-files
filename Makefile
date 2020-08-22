@@ -107,6 +107,8 @@ HASKELL_DEPENDENCIES := \
 STOW_TARGET := $(HOME)
 STOW = stow -t $(STOW_TARGET) -R -v
 
+YAY := yay -S --noconfirm
+
 .PHONY: all
 all: install
 
@@ -123,11 +125,11 @@ install: link-visual
 
 .PHONY: install-cli-deps
 install-cli-deps:
-	yay -S $(CLI_DEPENDENCIES)
+	$(YAY) $(CLI_DEPENDENCIES)
 
 .PHONY: install-visual-deps
 install-visual-deps:
-	yay -S $(VISUAL_DEPENDENCIES)
+	$(YAY) $(VISUAL_DEPENDENCIES)
 
 # Linking packages
 .PHONY: link-all
