@@ -12,6 +12,7 @@ CLI_PACKAGES := \
 	ssh \
 	tin \
 	tmux \
+	vifm \
 	vim \
 	zsh \
 
@@ -54,6 +55,7 @@ CLI_DEPENDENCIES := \
 	community/tig \
 	community/tmux \
 	community/udiskie \
+	community/vifm \
 	community/zsh-completions \
 	core/archlinux-keyring \
 	core/openssh \
