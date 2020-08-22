@@ -62,6 +62,8 @@ CLI_DEPENDENCIES := \
 	extra/imagemagick \
 	extra/keychain \
 	extra/networkmanager \
+	extra/vim \
+	extra/vim-runtime \
 	extra/zsh \
 
 VISUAL_DEPENDENCIES := \
