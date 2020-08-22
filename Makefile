@@ -210,4 +210,6 @@ rust:
 
 .PHONY: haskell
 haskell:
-	stack build --copy-compiler-tool $(HASKELL_DEPENDENCIES)
+	if [ -n "$(HASKELL_DEPENDENCIES)" ]; then \
+	    stack build --copy-compiler-tool $(HASKELL_DEPENDENCIES); \
+	fi
