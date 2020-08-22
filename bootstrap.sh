@@ -84,3 +84,4 @@ prerequisite
 [ -z "$NOYAY" ] && install-yay
 [ -z "$NOLANG" ] && setup-lang
 [ -z "$NOCREDS" ] && get-creds
+exit 0
