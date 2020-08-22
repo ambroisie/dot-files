@@ -46,6 +46,7 @@ CLI_DEPENDENCIES := \
 	community/mypy \
 	community/pandoc \
 	community/ripgrep \
+	community/rustup \
 	community/shellcheck \
 	community/shfmt \
 	community/stack \
@@ -97,10 +98,6 @@ VISUAL_DEPENDENCIES := \
 	extra/noto-fonts-emoji \
 	extra/thunderbird \
 	extra/vlc \
-
-RUST_DEPENDENCIES := \
-	clippy \
-	rustfmt \
 
 HASKELL_DEPENDENCIES := \
 	brittany \
@@ -202,11 +199,10 @@ unstow-tmux:
 	$(STOW) -D tmux
 	rm -rf ~/.config/tmux/plugins/
 
-# Development related installations
+# The `rustup` package does not install a toolchain by default
 .PHONY: rust
 rust:
-	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-	rustup component add $(RUST_DEPENDENCIES)
+	rustup default stable
 
 .PHONY: haskell
 haskell:
