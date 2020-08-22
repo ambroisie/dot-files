@@ -11,3 +11,16 @@ steps:
       - "echo 'root ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers"
       - make link-all
       - make unlink-all
+
+---
+kind: pipeline
+name: verify install
+
+steps:
+  - name: full install
+    image: oblique/archlinux-yay
+    pull: always
+    commands:
+      - "echo 'root ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers"
+      - ./bootstrap.sh --no-creds --no-lang --no-yay
+      -  make YAY='sudo -u aur yay -S --noconfirm --needed'
