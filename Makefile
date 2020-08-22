@@ -35,7 +35,9 @@ CLI_DEPENDENCIES := \
 	aur/bitwarden-cli \
 	aur/cppreference \
 	aur/git-absorb \
+	aur/handlr-bin \
 	aur/stdman \
+	aur/xdg-utils-handlr \
 	aur/zsh-fast-syntax-highlighting-git \
 	community/bat \
 	community/fd \
