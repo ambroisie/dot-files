@@ -5,6 +5,7 @@ CLI_PACKAGES := \
 	git \
 	haskell \
 	isort \
+	mimetype \
 	mypy \
 	remind \
 	scripts \
