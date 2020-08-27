@@ -37,6 +37,7 @@ CLI_DEPENDENCIES := \
 	aur/cppreference \
 	aur/git-absorb \
 	aur/handlr-bin \
+	aur/nodejs-markdownlint-cli \
 	aur/stdman \
 	aur/xdg-utils-handlr \
 	aur/zsh-fast-syntax-highlighting-git \
