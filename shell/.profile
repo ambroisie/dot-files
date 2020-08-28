@@ -50,6 +50,9 @@ elif { [ -n "$BASH_VERSION" ] || [ -n "$ZSH_VERSION" ] ; } &&
     stty -ixon
 fi
 
+# I do not want popups when asking for my SSH key
+unset SSH_ASKPASS
+
 # Use keychain to handle ssh-agent, in interactive shell too
 eval "$(keychain --eval id_rsa --eval shared_rsa --quiet)"
 
