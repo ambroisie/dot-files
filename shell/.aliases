@@ -13,9 +13,7 @@ alias fgrep='fgrep --color=auto'
 alias diff='diff --color=auto'
 
 # Better defaults
-alias cp='cp -i'
 alias more='less'
-#alias mkdir='mkdir -v'
 alias userlist='cut -d: -f1 /etc/passwd'
 alias fhere='find . -name '
 alias free='free -mt'
@@ -24,7 +22,6 @@ alias psgrep='ps aux | grep -v grep | grep -i -e VSZ -e'
 alias wget='wget -c'
 alias histg='history | grep'
 alias myip='curl http://ipecho.net/plain; echo'
-#alias logs="find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
 alias folders='find . -maxdepth 1 -type d -print0 | xargs -0 du -sk | sort -rn'
 
 # Quick compilation with flags
