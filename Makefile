@@ -51,6 +51,7 @@ CLI_DEPENDENCIES := \
 	community/mypy \
 	community/pandoc \
 	community/ripgrep \
+	community/rust-analyzer \
 	community/rustup \
 	community/shellcheck \
 	community/shfmt \
