@@ -13,6 +13,11 @@ let b:undo_ftplugin='|unlet! b:ale_rust_cargo_check_examples'
 let b:ale_rust_cargo_use_clippy=executable('cargo-clippy')
 let b:undo_ftplugin='|unlet! b:ale_rust_cargo_use_clippy'
 
+" Use rust-analyzer instead of RLS as a linter
+let b:ale_linters=[ 'cargo', 'analyzer' ]
+let b:undo_ftplugin='|unlet! b:ale_linters'
+
+
 " Use rustfmt as ALE fixer for rust
 let b:ale_fixers=[ 'rustfmt' ]
 let b:undo_ftplugin.='|unlet! b:ale_fixers'
