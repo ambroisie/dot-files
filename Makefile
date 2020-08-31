@@ -209,6 +209,7 @@ unstow-tmux:
 .PHONY: rust
 rust:
 	rustup default stable
+	rustup component add rust-src # For rust-analyzer
 
 .PHONY: haskell
 haskell:
