@@ -1,3 +1,5 @@
+# Git credentials
+git/.config/git/config-sendemail
 # Vim related files
 vim/.vim/.netrwhist
 vim/.vim/autoload/plug.vim*

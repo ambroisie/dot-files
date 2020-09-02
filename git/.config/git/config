@@ -59,6 +59,9 @@
 	autoSquash = true
 	autoStash = true
 
+[include]
+	path = config-sendemail
+
 [alias]
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
