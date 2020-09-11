@@ -157,6 +157,11 @@ stow-scripts: scripts
 	mkdir -p $(STOW_TARGET)
 	$(STOW) $<
 
+stow-ssh: ssh
+	$(STOW) $<
+	# Enable & start ssh-agent service
+	systemctl enable --now --user ssh-agent.service
+
 stow-system-X: STOW_TARGET=/
 stow-system-X: system-X
 	sudo $(STOW) $<
