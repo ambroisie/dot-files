@@ -147,8 +147,6 @@ link-cli: $(addprefix stow-,$(CLI_PACKAGES))
 link-visual: $(addprefix stow-,$(VISUAL_PACKAGES))
 
 # Installing configuration packages
-.PHONY: $(addprefix stow-,$(CLI_PACKAGES))
-.PHONY: $(addprefix stow-,$(VISUAL_PACKAGES))
 stow-%: %
 	$(STOW) $<
 
