@@ -114,6 +114,9 @@ STOW = stow -t $(STOW_TARGET) -R -v
 
 YAY := yay -S --noconfirm --needed
 
+# Used to disable some steps in CI
+CI :=
+
 .PHONY: all
 all: install
 
@@ -158,7 +161,7 @@ stow-scripts: scripts
 stow-ssh: ssh
 	$(STOW) $<
 	# Enable & start ssh-agent service
-	systemctl enable --now --user ssh-agent.service
+	[ -z "$(CI)" ] || systemctl enable --now --user ssh-agent.service
 
 stow-system-X: STOW_TARGET=/
 stow-system-X: system-X
