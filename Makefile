@@ -121,7 +121,7 @@ all: install
 .PHONY: install-cli
 install-cli: install-cli-deps
 install-cli: link-cli
-install-cli: rust haskell
+install-cli: rust-pkgs haskell-pkgs
 
 .PHONY: install
 install: install-cli
@@ -209,13 +209,13 @@ unstow-tmux:
 	rm -rf ~/.config/tmux/plugins/
 
 # The `rustup` package does not install a toolchain by default
-.PHONY: rust
-rust:
+.PHONY: rust-pkgs
+rust-pkgs:
 	rustup default stable
 	rustup component add rust-src # For rust-analyzer
 
-.PHONY: haskell
-haskell:
+.PHONY: haskell-pkgs
+haskell-pkgs:
 	if [ -n "$(HASKELL_DEPENDENCIES)" ]; then \
 	    stack build --copy-compiler-tool $(HASKELL_DEPENDENCIES); \
 	fi
