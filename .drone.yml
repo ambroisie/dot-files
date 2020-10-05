@@ -7,7 +7,7 @@ steps:
     image: archlinux
     pull: always
     commands:
-      - pacman -Suy --noconfirm --needed make git stow sudo vim tmux
+      - pacman -Suy --noconfirm --needed make git stow sudo vim tmux emacs
       - "echo 'root ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers"
       - make link-all
       - make unlink-all
