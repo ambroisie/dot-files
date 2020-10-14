@@ -7,6 +7,7 @@ CLI_PACKAGES := \
 	isort \
 	mimetype \
 	mypy \
+	nvim \
 	remind \
 	scripts \
 	shell \
@@ -50,6 +51,7 @@ CLI_DEPENDENCIES := \
 	community/mosh \
 	community/mypy \
 	community/pandoc \
+	community/python-pynvim \
 	community/ripgrep \
 	community/rust-analyzer \
 	community/rustup \
