@@ -119,3 +119,8 @@ source /usr/share/fzf/key-bindings.zsh
 
 # Enable completions for fzf
 source /usr/share/fzf/completion.zsh
+
+# Launch tmux with a default session
+if [ -z "$TMUX" ]; then
+    exec tmux new-session -As default
+fi
