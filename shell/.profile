@@ -6,6 +6,9 @@ if { [ -n "$BASH_VERSION" ] && shopt -q login_shell; } ||
     # Add our scripts to the path
     export PATH="$HOME/.scripts:$PATH"
 
+    # Add cargo binaries
+    export PATH="$HOME/.cargo/bin:$PATH"
+
     # User-local bin directories
     export PATH="$HOME/bin:$PATH"
 
