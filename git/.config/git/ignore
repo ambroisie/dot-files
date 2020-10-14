@@ -20,3 +20,9 @@ compile_commands.json
 
 # Debugger files
 .gdb_history
+
+# LSP cache
+.clangd/
+
+# Swap and backup files
+*~
