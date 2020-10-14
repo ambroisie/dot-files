@@ -9,5 +9,9 @@ augroup numbertoggle
     autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
     autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
     " Disable line numbers and relative line numbers in terminal
-    autocmd TerminalOpen * setlocal nonu nornu
+    if exists('##TerminalOpen')
+        autocmd TerminalOpen * setlocal nonu nornu
+    elseif has('nvim')
+        autocmd TermOpen * setlocal nonu nornu
+    endif
 augroup END
