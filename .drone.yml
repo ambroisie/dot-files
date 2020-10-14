@@ -24,3 +24,15 @@ steps:
       - "echo 'root ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers"
       - ./bootstrap.sh --no-creds --no-lang --no-yay
       -  make YAY='sudo -u aur yay -S --noconfirm --needed' HASKELL_DEPENDENCIES=''
+
+  - name: notify
+    image: plugins/matrix
+    settings:
+      homeserver:
+        from_secret: matrix_homeserver
+      roomid:
+        from_secret: matrix_roomid
+      username:
+        from_secret: matrix_username
+      password:
+        from_secret: matrix_password
