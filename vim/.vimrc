@@ -138,6 +138,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 " Some ex command mappings
 Plug 'tpope/vim-unimpaired'
+" Easily comment
+Plug 'tpope/vim-commentary'
 " }}}
 
 " Snippets {{{
