@@ -1,6 +1,6 @@
 ---
 kind: pipeline
-name: verify linking
+name: default
 
 steps:
   - name: link & unlink
@@ -12,11 +12,6 @@ steps:
       - make link-all
       - make unlink-all
 
----
-kind: pipeline
-name: verify install
-
-steps:
   - name: full install
     image: oblique/archlinux-yay
     pull: always
@@ -36,3 +31,4 @@ steps:
         from_secret: matrix_username
       password:
         from_secret: matrix_password
+    depends_on: [ "link & unlink", "full install" ]
