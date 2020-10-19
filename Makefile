@@ -12,7 +12,6 @@ CLI_PACKAGES := \
 	scripts \
 	shell \
 	ssh \
-	tin \
 	tmux \
 	vifm \
 	vim \
@@ -169,10 +168,6 @@ stow-system-X: STOW_TARGET=/
 stow-system-X: system-X
 	sudo $(STOW) $<
 
-stow-tin: tin
-	rm -rf $(STOW_TARGET)/.tin
-	ln -s $(realpath tin/.tin) $(STOW_TARGET)/.tin
-
 stow-tmux: tmux
 	$(STOW) $<
 	[ -d ~/.config/tmux/plugins/tpm ] || \
@@ -205,9 +200,6 @@ unstow-scripts:
 unstow-system-X: STOW_TARGET=/
 unstow-system-X:
 	sudo $(STOW) -D system-X
-
-unstow-tin:
-	rm -f $(STOW_TARGET)/.tin
 
 unstow-tmux:
 	$(STOW) -D tmux
