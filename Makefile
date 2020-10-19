@@ -80,6 +80,7 @@ VISUAL_DEPENDENCIES := \
 	aur/gnome-ssh-askpass3 \
 	aur/i3-battery-popup-git \
 	aur/i3blocks-contrib-git \
+	aur/i3lock-color \
 	aur/networkmanager-dmenu-git \
 	aur/qsyncthingtray \
 	aur/rofi-dmenu \
@@ -87,7 +88,6 @@ VISUAL_DEPENDENCIES := \
 	community/acpi \
 	community/dunst \
 	community/flameshot \
-	community/i3lock-color \
 	community/playerctl \
 	community/redshift \
 	community/syncthing \
