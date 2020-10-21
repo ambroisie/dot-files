@@ -66,7 +66,7 @@ source /usr/share/fzf/key-bindings.bash
 # Enable fzf completion
 source /usr/share/fzf/completion.bash
 
-# Launch tmux with a default session
+# Launch tmux with a new session
 if [ -z "$TMUX" ]; then
-    exec tmux new-session -As default
+    exec tmux new-session
 fi
