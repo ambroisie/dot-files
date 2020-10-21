@@ -3,15 +3,6 @@ kind: pipeline
 name: default
 
 steps:
-  - name: link & unlink
-    image: archlinux
-    pull: always
-    commands:
-      - pacman -Suy --noconfirm --needed make git stow sudo vim tmux emacs
-      - "echo 'root ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers"
-      - make link-all
-      - make unlink-all
-
   - name: full install
     image: oblique/archlinux-yay
     pull: always
@@ -31,7 +22,6 @@ steps:
         from_secret: matrix_username
       password:
         from_secret: matrix_password
-    depends_on: [ "link & unlink", "full install" ]
     trigger:
       status:
         - failure
