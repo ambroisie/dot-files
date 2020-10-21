@@ -37,6 +37,9 @@
 [diff]
 	algorithm = patience
 
+[init]
+	defaultBranch = main
+
 [merge]
 	tool = fugitive
 
