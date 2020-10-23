@@ -429,6 +429,8 @@ exec --no-startup-id dunst
 exec --no-startup-id i3-battery-popup -n -L 15 -l 5
 # Autolock after 1 minute without any input, lock on upper-left, don't in lower-right
 exec --no-startup-id xautolock -detectsleep -time 3 -cornerdelay 5 -cornerredelay 5 -corners +00- -locker "i3exit lock" -notify 5 -notifier "notify-send -u critical -t 5000 -- 'Locking screen in 5 seconds'"
+# Launch a tmux server
+exec --no-startup-id tmux new-session -s ambroisie -d
 
 # Set the wallpaper using the last settings
 exec --no-startup-id ~/.fehbg
