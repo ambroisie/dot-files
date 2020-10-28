@@ -190,6 +190,17 @@ set background=dark
 
 " Use onedark
 silent! colorscheme onedark
+
+" 24-bit true color {{{
+if (has("termguicolors"))
+    set termguicolors
+    " Need this hack-around because it is only applied on TERM='xterm' otherwise
+    if (!empty($TMUX) && !has('nvim'))
+        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    endif
+endif
+" }}}
 " }}}
 
 " Search parameters {{{
