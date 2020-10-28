@@ -6,6 +6,8 @@ vim/.vim/autoload/plug.vim*
 vim/.vim/plugged/
 vim/.vim/spell/
 vim/.vim/view/
+vim/.vim/viminfo
+nvim/.config/nvim/shada
 # Miscellaneous desktop files
 desktop/
 tmux/.config/tmux/plugins
