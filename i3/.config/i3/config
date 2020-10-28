@@ -31,6 +31,8 @@ floating_modifier $mod
 
 # Start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+# Start a terminal without lauching tmux
+bindsym $mod+Shift+Return exec env TMUX=nil i3-sensible-terminal
 
 # Kill focused window
 bindsym $mod+Shift+q kill
