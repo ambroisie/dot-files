@@ -17,6 +17,3 @@ noremap <Leader>m :silent! :make! \| :redraw!<CR>
 
 " Remove search-highlighting
 noremap <Leader><Leader> :nohls<CR>
-
-" Explicit map for vim-cheat40 which seems to fail because of my <Nop> map
-map <Leader>? :<C-u>Cheat40<CR>

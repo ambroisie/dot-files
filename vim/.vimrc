@@ -52,26 +52,16 @@ call plug#begin('~/.vim/plugged')
 
 " Theming {{{
 """""""""
-" Nice dark theme
-Plug 'nanotech/jellybeans.vim'
 " Another nice dark theme
 Plug 'morhetz/gruvbox'
 " Simpler gruvbox
 Plug 'lifepillar/vim-gruvbox8'
-" Yet another nice dark theme
-Plug 'jonathanfilip/vim-lucius'
 " More dark colorschemes
 Plug 'joshdick/onedark.vim'
-" And even more
-Plug 'rakr/vim-one'
 " And another one
 Plug 'junegunn/seoul256.vim'
 " Fancy status bar
 Plug 'itchyny/lightline.vim'
-" Simplistic dark theme
-Plug 'axvr/photon.vim'
-" Another dark theme
-Plug 'haishanh/night-owl.vim'
 " }}}
 
 " Minimum viable vim config {{{
@@ -120,14 +110,10 @@ Plug 'tpope/vim-vinegar'
 Plug 'romainl/vim-qf'
 " Better folding
 Plug 'Konfekt/FastFold'
-" A nice little cheat-sheet
-Plug 'lifepillar/vim-cheat40'
 " UNIX integration
 Plug 'tpope/vim-eunuch'
 " Readline mappings
 Plug 'tpope/vim-rsi'
-" Vifm configuration file, and file browsing facilities
-Plug 'vifm/vifm.vim'
 " }}}
 
 " Mappings {{{
