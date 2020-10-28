@@ -1,7 +1,9 @@
 " Basic configuraion {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Don't try to be compatible with Vi
-set nocompatible
+" Don't try to be compatible with Vi, but avoid side-effects
+if &compatible
+  set nocompatible
+endif
 " Use UTF-8
 set encoding=utf-8
 set fileencodings=utf-8
