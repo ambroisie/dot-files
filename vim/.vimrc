@@ -172,10 +172,8 @@ set visualbell
 " Disable bell completely by resetting the visual bell's escape sequence
 set t_vb=
 
-" Use 80 columns
-set textwidth=80
-" Highlight when after textwidth
-set colorcolumn=+1
+" Color the 80th column
+set colorcolumn=80
 " Show whitespace
 set list
 " Show a tab as an arrow, trailing spaces as ¤, non-breaking spaces as dots
