@@ -8,3 +8,7 @@ let b:undo_ftplugin.='|unlet! b:ale_linter_aliases'
 " Use a small indentation value on Pandoc files
 setlocal shiftwidth=2
 let b:undo_ftplugin.='|setlocal shiftwidth<'
+
+" Use my usual text width
+setlocal textwidth=80
+let b:undo_ftplugin.='|setlocal textwidth<'
