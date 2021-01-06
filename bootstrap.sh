@@ -71,6 +71,15 @@ get-ssh() {
     get-doc "SysAdmin/SSH" "shared-key-private" "$HOME/.ssh/shared_rsa" 600
 }
 
+get-pgp() {
+    local KEY
+    KEY=key.asc
+    get-doc "SysAdmin/PGP" "pgp-key-private" "$KEY" 644
+
+    gpg —-import "$KEY"
+    printf '5\ny\n' | gpg --command-fd 0  --edit-key 'Bruno BELANYI'  trust
+}
+
 get-creds() {
     if [ -z "${BW_SESSION-set}" ]; then
         BW_SESSION="$(bw login --raw)"
@@ -78,6 +87,7 @@ get-creds() {
     fi
 
     get-ssh
+    get-pgp
 }
 
 prerequisite
