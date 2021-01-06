@@ -82,6 +82,7 @@ get-pgp() {
 
 get-creds() {
     if [ -z "${BW_SESSION-set}" ]; then
+        bw logout || true
         BW_SESSION="$(bw login --raw)"
         export BW_SESSION
     fi
