@@ -8,7 +8,6 @@ CLI_PACKAGES := \
 	mimetype \
 	mypy \
 	nvim \
-	remind \
 	scripts \
 	shell \
 	ssh \

@@ -1,2 +1,0 @@
-# Include birthdays
-include [getenv("HOME")]/.config/remind/birthdays.rem
