@@ -46,9 +46,6 @@ if { [ -n "$BASH_VERSION" ] && shopt -q login_shell; } ||
     # Use my preferred pager settings for bat
     export BAT_PAGER="$PAGER $LESS"
 
-    # Use this path for `remind` calendar
-    export DOTREMINDERS="$HOME/.config/remind/reminders.rem"
-
     # Use my ssh-agent service's socket
     export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 elif { [ -n "$BASH_VERSION" ] || [ -n "$ZSH_VERSION" ] ; } &&
