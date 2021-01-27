@@ -73,10 +73,6 @@
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	trim = reflog expire --expire-unreachable=now --all
-	chop = gc --prune=now
-	optimize = repack -a -d -f --depth=250 --window=250
-	pf = pull --ff-only
-	m4 = mergetool -t vimdiff
 	assume = update-index --assume-unchanged
 	unassume = update-index --no-assume-unchanged
 	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
