@@ -1,0 +1,4 @@
+configuration {
+    modi: "drun,windowcd,ssh,run";
+    theme: "/usr/share/rofi/themes/gruvbox-dark-hard.rasi";
+}
